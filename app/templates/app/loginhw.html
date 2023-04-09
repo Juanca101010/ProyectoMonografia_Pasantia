@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login To Your Account</title>
+    <link href="{% static 'app/css/loginestilohw.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="form animated bounceIn">
+      <h2>Login To Your Account</h2>
+      <form>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button class="animatedinfinitepulse"> Login</button>
+        <a href="{% url 'app:dashboardhw' %}"  class="animatedinfinitepulse">Ingresar</a>
+      </form>
+    </div>
+  </body>
+</html>

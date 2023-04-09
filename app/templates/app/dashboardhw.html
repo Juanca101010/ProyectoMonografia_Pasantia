@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <title>{% block titulo %}Ultimate Platform HW{% endblock %}</title>
+    <link href="{% static 'app/css/dashboard.css' %}" rel="stylesheet">
+</head>
+
+<html>
+
+<body>
+    
+    <div id="contenedor" class="contenedor">
+        <div id="header" class="header">
+            <h2>CS Platform</h2>
+            <nav id="menu" class="menu">
+              <a href="{% url 'app:dashboardhw' %}">HOME</a>
+              <a href="#">Netcare</a>
+              <a href="#">Icare+</a>
+              <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
+              <a href="#">One Box</a>
+              <a href="#">VPN Access</a>
+              <a href="#">Help</a>
+              <a href="#">Profile</a>
+              <a href="#">Log Out</a>
+            </nav>
+          </div>
+          
+        <div class="barra">
+                <a href="#">Inicio</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Productos</a>
+                <a href="#">Servicios</a>
+                <a href="#">Contacto</a>
+        </div>
+        <div class="contenido">
+            <div class="dashboard navy">
+                <h2>Tareas</h2>
+                <ul class="task-list">
+                  <li>
+                    <div class="task">
+                      <div class="task-header">
+                        <h3>Nombre de la tarea</h3>
+                        <button class="edit-btn">Edit</button>
+                        <button class="compare-btn">Share</button>
+                      </div>
+                      <div class="task-body">
+                        <p>Owner: <span class="owner">Nombre del owner</span></p>
+                        <p>Progreso: <span class="progress">XX%</span></p>
+                        <p>Fecha de vencimiento: <span class="due-date">DD/MM/YYYY</span></p>
+                      </div>
+                      <div class="task-footer">
+                        <p>Contacto: <span class="contact-info">información de contacto</span></p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="task">
+                        <div class="task-header">
+                          <h3>Nombre de la tarea</h3>
+                          <button class="edit-btn">Edit</button>
+                          <button class="compare-btn">Share</button>
+                        </div>
+                        <div class="task-body">
+                          <p>Owner: <span class="owner">Nombre del owner</span></p>
+                          <p>Progreso: <span class="progress">XX%</span></p>
+                          <p>Fecha de vencimiento: <span class="due-date">DD/MM/YYYY</span></p>
+                        </div>
+                        <div class="task-footer">
+                          <p>Contacto: <span class="contact-info">información de contacto</span></p>
+                        </div>
+                      </div>
+                  </li>
+                  <li>
+                    <div class="task">
+                        <div class="task-header">
+                          <h3>Nombre de la tarea</h3>
+                          <button class="edit-btn">Edit</button>
+                          <button class="compare-btn">Share</button>
+                        </div>
+                        <div class="task-body">
+                          <p>Owner: <span class="owner">Nombre del owner</span></p>
+                          <p>Progreso: <span class="progress">XX%</span></p>
+                          <p>Fecha de vencimiento: <span class="due-date">DD/MM/YYYY</span></p>
+                        </div>
+                        <div class="task-footer">
+                          <p>Contacto: <span class="contact-info">información de contacto</span></p>
+                        </div>
+                      </div>
+                  </li>
+                  <li>
+                    <!-- Otras tareas aquí -->
+                  </li>
+                </ul>
+              </div>
+              
+        </div>
+            
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>

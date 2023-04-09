@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <title>{% block titulo %}Ultimate Platform HW{% endblock %}</title>
+    <link href="{% static 'app/css/smsEmailestilo.css' %}" rel="stylesheet">
+</head>
+
+<html>
+
+<body>
+
+    <div id="contenedor" class="contenedor">
+        <div id="header" class="header">
+            <h2>CS Platform</h2>
+            <nav id="menu" class="menu">
+                <a href="{% url 'app:dashboardhw' %}">HOME</a>
+                <a href="#">Netcare</a>
+                <a href="#">Icare+</a>
+                <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
+                <a href="#">One Box</a>
+                <a href="#">VPN Access</a>
+                <a href="#">Help</a>
+                <a href="#">Profile</a>
+                <a href="#">Log Out</a>
+            </nav>
+        </div>
+
+        <div class="barra">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Productos</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
+        </div>
+        <div class="contenido">
+            <div class="email-container">
+                <div class="email-messages">
+                  <h2>Mensajes</h2>
+                  <div class="email-toolbar">
+                    <button class="email-btn email-btn-search">Buscar</button>
+                    <button class="email-btn email-btn-new">Nuevo correo</button>
+                    <button class="email-btn email-btn-share">Compartir</button>
+                  </div>
+                  <ul class="email-message-list">
+                    <li class="email-message-item">
+                      <div class="email-message-item-content">
+                        <div class="email-message-item-title">Título del mensaje</div>
+                        <div class="email-message-item-preview">Este es el contenido previo del mensaje...</div>
+                      </div>
+                      <div class="email-message-item-meta">
+                        <div class="email-message-item-sender">Nombre del remitente</div>
+                        <div class="email-message-item-date">Fecha del mensaje</div>
+                      </div>
+                    </li>
+                    <!-- Más mensajes aquí -->
+                  </ul>
+                </div>
+                <div class="email-contacts">
+                  <h2>Contactos</h2>
+                  <div class="email-toolbar">
+                    <button class="email-btn email-btn-search">Buscar</button>
+                    <button class="email-btn email-btn-new">Nuevo chat</button>
+                    <button class="email-btn email-btn-share">Compartir</button>
+                  </div>
+                  <ul class="email-contact-list">
+                    <li class="email-contact-item">
+                      <div class="email-contact-item-avatar">
+                        <img src="https://via.placeholder.com/50x50" alt="Avatar del contacto">
+                      </div>
+                      <div class="email-contact-item-info">
+                        <div class="email-contact-item-name">Nombre del contacto</div>
+                        <div class="email-contact-item-email">correo@del.contacto</div>
+                      </div>
+                    </li>
+                    <!-- Más contactos aquí -->
+                  </ul>
+                </div>
+              </div>
+              
+
+            <script src="{% static 'app/js/emailsms.js' %}"></script> <!-- Archivo JavaScript que cambia los colores -->
+
+        </div>
+
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>
