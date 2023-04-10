@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <title>{% block titulo %}PROFILE_CS{% endblock %}</title>
+    <!-- <link href="{% static 'app/css/profile.css' %}" rel="stylesheet"> -->
+    <link href="{% static 'app/css/dashboard.css' %}" rel="stylesheet">
+</head>
+
+<html>
+
+<body>
+    
+    <div id="contenedor" class="contenedor">
+        <div id="header" class="header">
+            <h2>CS Platform</h2>
+            <nav id="menu" class="menu">
+              <a href="{% url 'app:dashboardhw' %}">HOME</a>
+              <a href="{% url 'app:netcare' %}">Netcare</a>
+              <a href="{% url 'app:icareplus' %}">Icare+</a>
+              <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
+              <a href="{% url 'app:onebox' %}">One Box</a>
+              <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
+              <a href="{% url 'app:help' %}">Help</a>
+              <a href="{% url 'app:profile' %}">Profile</a>
+              <a href="{% url 'app:loginhw' %}">Log Out</a>
+            </nav>
+          </div>
+          
+        <div class="barra">
+                <a href="#">Inicio</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Productos</a>
+                <a href="#">Servicios</a>
+                <a href="#">Contacto</a>
+        </div>
+        <div class="contenido">
+           
+              
+        </div>
+            
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>

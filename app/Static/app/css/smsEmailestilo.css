@@ -221,8 +221,9 @@
     padding-bottom: 0;
   }
   
-  .email-contact-item-avatar {
-    margin-right: 10px;
+  img{
+    max-width: 50px;
+    padding: 5px;
   }
   
   .email-contact-item-avatar img {

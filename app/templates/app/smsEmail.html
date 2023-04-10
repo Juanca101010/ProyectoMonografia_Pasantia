@@ -17,15 +17,15 @@
         <div id="header" class="header">
             <h2>CS Platform</h2>
             <nav id="menu" class="menu">
-                <a href="{% url 'app:dashboardhw' %}">HOME</a>
-                <a href="#">Netcare</a>
-                <a href="#">Icare+</a>
-                <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
-                <a href="#">One Box</a>
-                <a href="#">VPN Access</a>
-                <a href="#">Help</a>
-                <a href="#">Profile</a>
-                <a href="#">Log Out</a>
+              <a href="{% url 'app:dashboardhw' %}">HOME</a>
+              <a href="{% url 'app:netcare' %}">Netcare</a>
+              <a href="{% url 'app:icareplus' %}">Icare+</a>
+              <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
+              <a href="{% url 'app:onebox' %}">One Box</a>
+              <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
+              <a href="{% url 'app:help' %}">Help</a>
+              <a href="{% url 'app:profile' %}">Profile</a>
+              <a href="{% url 'app:loginhw' %}">Log Out</a>
             </nav>
         </div>
 
@@ -69,7 +69,7 @@
                   <ul class="email-contact-list">
                     <li class="email-contact-item">
                       <div class="email-contact-item-avatar">
-                        <img src="https://via.placeholder.com/50x50" alt="Avatar del contacto">
+                        <img src="{% static 'app/image/foto1.jpg' %}" alt="Avatar del contacto">
                       </div>
                       <div class="email-contact-item-info">
                         <div class="email-contact-item-name">Nombre del contacto</div>
