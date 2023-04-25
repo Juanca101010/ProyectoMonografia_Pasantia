@@ -5,60 +5,105 @@
 <html lang="en">
 
 <head>
-    <title>{% block titulo %}Ultimate Platform HW{% endblock %}</title>
-    <link href="{% static 'app/css/dashboard.css' %}" rel="stylesheet">
+  <title>{% block titulo %}Ultimate Platform HW{% endblock %}</title>
+  <link href="{% static 'app/css/dashboard.css' %}" rel="stylesheet">
 </head>
 
 <html>
 
 <body>
-    
-    <div id="contenedor" class="contenedor">
-        <div id="header" class="header">
-            <h2>CS Platform</h2>
-            <nav id="menu" class="menu">
-              <a href="{% url 'app:dashboardhw' %}">HOME</a>
-              <a href="{% url 'app:netcare' %}">Netcare</a>
-              <a href="{% url 'app:icareplus' %}">Icare+</a>
-              <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
-              <a href="{% url 'app:onebox' %}">One Box</a>
-              <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
-              <a href="{% url 'app:help' %}">Help</a>
-              <a href="{% url 'app:profile' %}">Profile</a>
-              <a href="{% url 'app:loginhw' %}">Log Out</a>
-            </nav>
-          </div>
+  <script src="{% static 'app/js/newtask.js' %}"></script>
 
-        <div class="contenido">
-            <div class="dashboard navy">
-                <h2>Tareas</h2>
-                <ul class="task-list">
-                  {%for lista  in tareas%}
-                  <li>
-                    <div class="task">
-                        <div class="task-header">
-                          <h3>{{lista.titulo}}</h3>
-                          <button class="edit-btn">Edit</button>
-                          <button class="compare-btn">Share</button>
-                        </div>
-                        <div class="task-body">
-                          <p>Owner: <span class="owner">{{lista.owner}}</span></p>
-                          <p>Progreso: <span class="progress">{{lista.progreso}}</span></p>
-                          <p>Fecha de vencimiento: <span class="due-date">{{lista.fecha_vencimiento}}</span></p>
-                        </div>
-                        <div class="task-footer">
-                          <p>Contacto: <span class="contact-info">{{lista.contacto_cliente}}</span></p>
-                        </div>
-                      </div>
-                  </li>
-                  {% endfor %}
-                </ul>
-              </div>
-              
-        </div>
-            
-        <div class="footer"></div>
+  <div id="contenedor" class="contenedor">
+    <div id="header" class="header">
+      <h2>CS Platform</h2>
+      <nav id="menu" class="menu">
+        <a href="{% url 'app:dashboardhw' %}">HOME</a>
+        <a href="{% url 'app:netcare' %}">Netcare</a>
+        <a href="{% url 'app:icareplus' %}">Icare+</a>
+        <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
+        <a href="{% url 'app:onebox' %}">One Box</a>
+        <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
+        <a href="{% url 'app:help' %}">Help</a>
+        <a href="{% url 'app:profile' %}">Profile</a>
+        <a href="{% url 'app:loginhw' %}">Log Out</a>
+      </nav>
     </div>
+
+    <div class="contenido">
+      <div class="dashboard navy">
+        <h2>Tareas</h2>
+
+        <div class="add-task">
+          <button id="create-task-btn" class="create-btn">Crear tarea</button>
+          <button id="cerrar" class="cerrar">X</button>
+
+        </div>
+
+        <div id="create-task-modal" class="modal">
+          <div class="modal-content">
+            <div>
+              <h2>Crea una nueva tarea</h2>
+            </div>
+            <br></br>
+            <form action="" method="POST">
+              {% csrf_token %}
+              <div>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+              </div>
+              <div>
+                <label for="owner">Owner:</label>
+                <input type="text" id="owner" name="owner" required>
+              </div>
+
+              <div>
+                <label for="progreso">Progreso:</label>
+                <input type="number" id="progreso" name="progreso" required>
+              </div>
+
+              <div>
+                <label for="fecha_vencimiento">Fecha de vencimiento:</label>
+                <input type="date" id="fecha_vencimiento" name="fecha_vencimiento" required>
+              </div>
+
+              <div>
+                <label for="contacto_cliente">Contacto del cliente:</label>
+                <input type="text" id="contacto_cliente" name="contacto_cliente" required>
+              </div>
+              <button type="submit" class="submit-btn">Crear</button>
+            </form>
+          </div>
+        </div>
+
+        <ul class="task-list">
+          {%for lista in tareas%}
+          <li>
+            <div class="task">
+              <div class="task-header">
+                <h3>{{lista.titulo}}</h3>
+                <button class="edit-btn">Edit</button>
+                <button class="compare-btn">Share</button>
+              </div>
+              <div class="task-body">
+                <p>Owner: <span class="owner">{{lista.owner}}</span></p>
+                <p>Progreso: <span class="progress">{{lista.progreso}}</span></p>
+                <p>Fecha de vencimiento: <span class="due-date">{{lista.fecha_vencimiento}}</span></p>
+              </div>
+              <div class="task-footer">
+                <p>Contacto: <span class="contact-info">{{lista.contacto_cliente}}</span></p>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer"></div>
+  </div>
+
 </body>
 
 </html>
