@@ -33,60 +33,25 @@
             <div class="dashboard navy">
                 <h2>Tareas</h2>
                 <ul class="task-list">
-                  <li>
-                    <div class="task">
-                      <div class="task-header">
-                        <h3>Nombre de la tarea</h3>
-                        <button class="edit-btn">Edit</button>
-                        <button class="compare-btn">Share</button>
-                      </div>
-                      <div class="task-body">
-                        <p>Owner: <span class="owner">Nombre del owner</span></p>
-                        <p>Progreso: <span class="progress">XX%</span></p>
-                        <p>Fecha de vencimiento: <span class="due-date">DD/MM/YYYY</span></p>
-                      </div>
-                      <div class="task-footer">
-                        <p>Contacto: <span class="contact-info">información de contacto</span></p>
-                      </div>
-                    </div>
-                  </li>
+                  {%for lista  in tareas%}
                   <li>
                     <div class="task">
                         <div class="task-header">
-                          <h3>Nombre de la tarea</h3>
+                          <h3>{{lista.titulo}}</h3>
                           <button class="edit-btn">Edit</button>
                           <button class="compare-btn">Share</button>
                         </div>
                         <div class="task-body">
-                          <p>Owner: <span class="owner">Nombre del owner</span></p>
-                          <p>Progreso: <span class="progress">XX%</span></p>
-                          <p>Fecha de vencimiento: <span class="due-date">DD/MM/YYYY</span></p>
+                          <p>Owner: <span class="owner">{{lista.owner}}</span></p>
+                          <p>Progreso: <span class="progress">{{lista.progreso}}</span></p>
+                          <p>Fecha de vencimiento: <span class="due-date">{{lista.fecha_vencimiento}}</span></p>
                         </div>
                         <div class="task-footer">
-                          <p>Contacto: <span class="contact-info">información de contacto</span></p>
+                          <p>Contacto: <span class="contact-info">{{lista.contacto_cliente}}</span></p>
                         </div>
                       </div>
                   </li>
-                  <li>
-                    <div class="task">
-                        <div class="task-header">
-                          <h3>Nombre de la tarea</h3>
-                          <button class="edit-btn">Edit</button>
-                          <button class="compare-btn">Share</button>
-                        </div>
-                        <div class="task-body">
-                          <p>Owner: <span class="owner">Nombre del owner</span></p>
-                          <p>Progreso: <span class="progress">XX%</span></p>
-                          <p>Fecha de vencimiento: <span class="due-date">DD/MM/YYYY</span></p>
-                        </div>
-                        <div class="task-footer">
-                          <p>Contacto: <span class="contact-info">información de contacto</span></p>
-                        </div>
-                      </div>
-                  </li>
-                  <li>
-                    <!-- Otras tareas aquí -->
-                  </li>
+                  {% endfor %}
                 </ul>
               </div>
               

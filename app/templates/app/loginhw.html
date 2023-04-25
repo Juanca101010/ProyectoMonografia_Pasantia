@@ -9,11 +9,12 @@
   <body>
     <div class="form animated bounceIn">
       <h2>Login To Your Account</h2>
-      <form>
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <button class="animatedinfinitepulse"> Login</button>
-        <a href="{% url 'app:dashboardhw' %}"  class="animatedinfinitepulse">Ingresar</a>
+      <form action="{% url 'app:autenticar' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button type="submit" class="botonl"> Login</button>
+        <a href="{% url 'app:dashboardhw' %}"  class="botonl">Ingresar</a>
       </form>
     </div>
   </body>
