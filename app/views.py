@@ -46,6 +46,17 @@ def dashboardhw(request):
     }
 
     return render(request, 'app/dashboardhw.html',contexto)
+
+def dashboardhws(request):
+
+    lista = Tarea.objects.all()
+    print(lista)
+    contexto ={
+        'tareas':lista,
+    }
+
+    return render(request, 'app/dashboardhws.html',contexto)
+
 def smsEmail(request):
 
     return render(request, 'app/smsEmail.html')
