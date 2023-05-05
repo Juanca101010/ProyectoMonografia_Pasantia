@@ -12,8 +12,6 @@
 <html>
 
 <body>
-  <script src="{% static 'app/js/newtask.js' %}"></script>
-
   <div id="contenedor" class="contenedor">
     <div id="header" class="header">
       <h2>CS Platform</h2>
@@ -50,14 +48,54 @@
           </li>
           {% endfor %}
         </ul>
-        <button class="create">CREAR</button>
+        <button id="create-task-btn" class="create">CREAR</button>
       </div>
+
+       <div class="container">
+        <form>
+          <div class="field" tabindex="1">
+            <label for="username">
+              <i class="far fa-user"></i>Titulo
+            </label>
+            <input name="username" type="text" placeholder="TItulo de tarea" required>
+          </div>
+          <div class="field" tabindex="2">
+            <label for="email">
+              <i class="far fa-envelope"></i>Descripción
+            </label>
+            <input name="email" type="text" placeholder="Descripción de tarea" required>
+          </div>
+          <div class="field" tabindex="3">
+            <label for="message">
+              <i class="far fa-edit"></i>Fecha de vencimiento
+            </label>
+            <input name="message" placeholder="type here" required></input>
+          </div>
+          <div class="field" tabindex="2">
+            <label for="email">
+              <i class="far fa-envelope"></i>Cliente
+            </label>
+            <input name="email" type="text" placeholder="Cliente" required>
+          </div>
+          <div class="field" tabindex="2">
+            <label for="email">
+              <i class="far fa-envelope"></i>Owner
+            </label>
+            <input name="email" type="text" placeholder="Owner" required>
+          </div>
+        </form>
+      </div>
+      
+      <!-- This is not part of Pen -->
+      <a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank" style="color:#000"></a>
+
+
 
     </div>
 
     <div class="footer"></div>
   </div>
-
+  <script src="{% static 'app/js/newtask.js' %}"></script>
 </body>
 
 </html>

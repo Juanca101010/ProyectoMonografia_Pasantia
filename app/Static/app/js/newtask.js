@@ -1,6 +1,6 @@
-var createTaskBtn = document.getElementById("create-task-btn");
-var modal = document.getElementById("create-task-modal");
-var closeBtn = document.querySelector(".cerrar");
+var createTaskBtn = document.getElementById("create");
+var modal = document.querySelector(".createtask");
+var closeBtn = document.querySelector(".createtask .submit-btn");
 
 createTaskBtn.onclick = function () {
   modal.style.display = "block";
@@ -15,4 +15,3 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-
