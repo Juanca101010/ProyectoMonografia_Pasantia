@@ -7,15 +7,16 @@
     <link href="{% static 'app/css/loginestilohw.css' %}" rel="stylesheet">
   </head>
   <body>
-    <div class="form animated bounceIn">
+    <form action="{% url 'app:autenticar' %}" method="POST">
       <h2>Login To Your Account</h2>
-      <form action="{% url 'app:autenticar' %}" method="POST">
         {% csrf_token %}
+        <label>USER</label>
         <input type="text" name="username">
+        <label>PASSWORD</label>
         <input type="password" name="password">
         <button type="submit" class="botonl"> Login</button>
-        <a href="{% url 'app:dashboardhw' %}"  class="botonl">Ingresar</a>
+        <a href="{% url 'app:dashboardhw' %}"  class="botonl">Ingresar Junior</a>
+        <a href="{% url 'app:dashboardhws' %}"  class="botonl">Ingresar Senior</a>
       </form>
-    </div>
   </body>
 </html>

@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from datetime import datetime
 from app.models import Cliente, Correo, Documentacion, Tarea, Usuario, VPN 
+from django.contrib.auth.models import User
+
 
 
 #-------------------------------------------
@@ -69,8 +71,41 @@ def icareplus(request):
 
     return render(request, 'app/icareplus.html')
 def netcare(request):
+    clientes=Cliente.objects.all()
+    contexto ={
+    'c':clientes,
+    }
 
-    return render(request, 'app/netcare.html')
+    owners=User.objects.all()
+    contexto ={
+    'u':owners,
+    }
+    return render(request, 'app/netcare.html',contexto)
+
+def crear_tarea(request):
+    try:
+        titulo = request.POST['titulo']
+        descripcion = request.POST['descripcion']
+        fecha_vencimiento = request.POST['fecha_vencimiento']
+        Cliente = request.POST['Cliente']
+        owner = request.POST['owner']
+
+        id_usuario=request.user.id
+
+        t = Tarea()
+        t.titulo=titulo
+        t.descripcion = descripcion
+        t.progreso = 0
+        t.fecha_vencimiento = fecha_vencimiento
+        t.contacto_cliente=Cliente
+        t.owner=owner
+        t.save()
+
+        return redirect('app:dashboardhw')
+    except Exception as e:
+        print(e)
+        return render(request,'app/dashboardhw.html')
+
 def onebox(request):
 
     return render(request, 'app/onebox.html')

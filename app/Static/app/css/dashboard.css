@@ -3,7 +3,7 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template: 110px auto 70px / 1fr;
+  grid-template: 150px auto 70px / 1fr;
   grid-template-areas:
     "header header"
     "contenido contenido"
@@ -14,9 +14,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 128, 0.473);
   grid-area: header;
   flex-direction: column;
+  background-image: url('/static/app/image/earthbbb.jpg');
+  background-size: cover;
+  background-size: auto 200%;
+  color: white;
 }
 
 .menu {
@@ -50,6 +53,9 @@
 .footer {
   background-color: rgba(0, 0, 128, 0.473);
   grid-area: footer;
+  background-image: url('/static/app/image/earthbbb.jpg');
+  background-size: cover;
+  background-size: auto;
 }
 
 /* --------------------------------------------------------------------------- */
@@ -76,13 +82,13 @@ background: #c2c2c2;
 color: navy;  
 }
 
-.edit-btn > button,.compare-btn > button,.create{
+.edit-btn > button,.compare-btn > button,.create, .crear{
 border-radius: 30px;
 background-color: navy;
 color: white;
 }
 
-.edit-btn > button:hover,.compare-btn > button:hover,.create:hover{
+.edit-btn > button:hover,.compare-btn > button:hover,.create:hover, .crear:hover{
   background-color: white;
   color: navy;
   }
@@ -96,7 +102,7 @@ color: white;
 }
 
 .container {
-  background-color: aqua;
+  border-style: dashed;
   display: flex;
   padding: 0 16px;
   flex-wrap: wrap;

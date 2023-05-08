@@ -17,6 +17,10 @@
     background-color: rgba(0, 0, 128, 0.473);
     grid-area: header;
     flex-direction: column;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto 200%;
+    color: white;
   }
   
   .menu {
@@ -46,6 +50,9 @@
     background-color: rgba(0, 0, 128, 0.473);
     grid-area: barra;
     height: 100%;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto;
   }
   
   .barra a {
@@ -71,6 +78,9 @@
   .footer {
     background-color: rgba(0, 0, 128, 0.473);
     grid-area: footer;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto;
   }
 
 /* Estilos generales */
