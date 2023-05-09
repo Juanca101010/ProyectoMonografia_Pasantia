@@ -33,6 +33,7 @@
         <h2>Tareas</h2>
         <ul class="task-list">
           {%for lista in tareas%}
+          {%for cl in clientes%}
           <li>
               <table>
                 <tr>
@@ -42,10 +43,11 @@
                   <td class="owner"><p>Owner: <span class="owner">{{lista.owner}}</span></p></td>
                   <td class="progress"><p>Progreso: <span class="progress">{{lista.progreso}}</span></p></td>
                   <td class="due-date"><p>Fecha de vencimiento: <span class="due-date">{{lista.fecha_vencimiento}}</span></p></td>
-                  <td class="contact-info"><p>Contacto: <span class="contact-info">{{lista.contacto_cliente}}</span></p></td>
+                  <td class="contact-info"><p>Contacto: <span class="contact-info">{{cl.nombre}}</span></p></td>
                 </tr>
               </table>
           </li>
+          {% endfor %}
           {% endfor %}
         </ul>
       </div>

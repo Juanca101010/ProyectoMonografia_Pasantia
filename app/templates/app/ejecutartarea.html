@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block titulo %}NETCARE TASK{% endblock %}</title>
+    <!-- <link href="{% static 'app/css/netcare.css' %}" rel="stylesheet"> -->
+    <link href="{% static 'app/css/ejecutartareaestilo.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="contenedor" class="contenedor">
+        <div id="header" class="header">
+            <h2>CS Platform</h2>
+            <nav id="menu" class="menu">
+                <a href="{% url 'app:dashboardhw' %}">HOME</a>
+                <a href="{% url 'app:netcare' %}">Netcare</a>
+                <a href="{% url 'app:icareplus' %}">Icare+</a>
+                <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
+                <a href="{% url 'app:onebox' %}">One Box</a>
+                <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
+                <a href="{% url 'app:help' %}">Help</a>
+                <a href="{% url 'app:profile' %}">Profile</a>
+                <a href="{% url 'app:loginhw' %}">Log Out</a>
+            </nav>
+        </div>
+
+        <div class="barra">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Productos</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
+        </div>
+        <div class="contenido">
+            <div class="form-group">
+                <label for="task-name">Nombre de la tarea:</label>
+                <input type="text" id="task-name">
+            </div>
+
+            <div class="form-group">
+                <label for="task-description">Descripción:</label>
+                <textarea id="task-description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="task-date">Fecha:</label>
+                <input type="date" id="task-date">
+            </div>
+
+            <div class="form-group">
+                <label for="task-id">ID:</label>
+                <input type="text" id="task-id">
+            </div>
+
+            <div class="form-group">
+                <label for="task-status">Estado:</label>
+                <select id="task-status">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En progreso">En progreso</option>
+                    <option value="Completada">Completada</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="task-product">Producto:</label>
+                <input type="text" id="task-product">
+            </div>
+
+            <div class="form-group">
+                <label for="task-client">Cliente:</label>
+                <input type="text" id="task-client">
+            </div>
+
+            <div class="tab-buttons">
+                <button class="tab-button">Implementación</button>
+                <button class="tab-button">Documentación del Proceso</button>
+                <button class="tab-button">Notas</button>
+                <button class="tab-button">Análisis de la Información</button>
+            </div>
+
+            <div class="tab active">
+                <h2>Implementación</h2>
+                <table id="device-info">
+                    <thead>
+                        <tr>
+                            <th>Dispositivo</th>
+                            <th>Afección</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dispositivo 1</td>
+                            <td>Afección 1</td>
+                        </tr>
+                        <tr>
+                            <td>Dispositivo 2</td>
+                            <td>Afección 2</td>
+                        </tr>
+                        <tr>
+                            <td>Dispositivo 3</td>
+                            <td>Afección 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tab">
+                <h2>Documentación del Proceso</h2>
+                <textarea id="process-documentation"></textarea>
+            </div>
+
+            <div class="tab">
+                <h2>Notas</h2>
+                <textarea id="task-notes"></textarea>
+            </div>
+
+            <div class="tab">
+                <h2>Análisis de la Información</h2>
+                <textarea id="information-analysis"></textarea>
+            </div>
+
+            <div class="button-container">
+                <button id="save-button">Guardar</button>
+                <button id="reset-button">Reiniciar</button>
+            </div>
+        </div>
+
+        <div class="footer"></div>
+    </div>
+    <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'app/js/pestanatask.js' %}"></script>
+</body>

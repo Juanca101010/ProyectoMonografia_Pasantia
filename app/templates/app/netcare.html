@@ -57,7 +57,7 @@
             <input name="descripcion" type="text" placeholder="Descripción de tarea" required>
           </div>
           <div class="field" tabindex="3">
-            <label for="message">
+            <label for="fecha_vencimiento">
               <i class="far fa-edit"></i>Fecha de vencimiento
             </label>
             <input type="date" name="fecha_vencimiento" placeholder="type here" required></input>
@@ -68,7 +68,7 @@
             </label>
             <select name="cliente">
               {%for clientes in c%}
-              <option value="{{clientes.id}}">{{clientes.nombre}} {{clientes.contacto}}</option>
+              <option value={{clientes.id}}>{{clientes.nombre}} {{clientes.contacto}}</option>
               {% endfor %}
             </select>
           </div>
@@ -78,7 +78,7 @@
             </label>
             <select name="owner">
               {%for owners in u%}
-              <option value="{{clientes.id}}">{{owners.username}}</option>
+              <option value={{owners.id}}>{{owners.username}} {{owners.email}}</option>
               {% endfor %}
             </select>
           </div>

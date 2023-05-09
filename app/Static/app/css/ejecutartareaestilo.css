@@ -1,0 +1,190 @@
+.contenedor {
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 110px 1fr 70px / 1fr 4fr;
+    grid-template-areas:
+      "header header"
+      "barra contenido"
+      "footer footer";
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 128, 0.473);
+    grid-area: header;
+    flex-direction: column;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto 200%;
+    color: white;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: navy;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menu a:hover {
+    background-color: #fff;
+    color: navy;
+  }
+  
+  .barra {
+    padding-top: 20px;
+    background-color: rgba(0, 0, 128, 0.473);
+    grid-area: barra;
+    height: 100%;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto;
+  }
+  
+  .barra a {
+    display: block;
+    background-color: navy;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin: 10px;
+  }
+  
+  .barra a:hover {
+    background-color: #fff;
+    color: navy;
+  }
+  
+  .contenido {
+    background: #fff;
+    grid-area: contenido;
+    padding: 10px;
+  }
+  
+  .footer {
+    background-color: rgba(0, 0, 128, 0.473);
+    grid-area: footer;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto;
+  }
+  
+  /* Estilos generales */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+/* Estilos para los formularios */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+/* Estilos para los títulos */
+h2 {
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Estilos para la animación */
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilos para los botones */
+.button-container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #23527c;
+}
+
+/* Estilos para las pestañas */
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+.tab-buttons {
+    margin-bottom: 20px;
+}
+
+.tab-buttons button {
+    margin-right: 10px;
+}

@@ -50,11 +50,15 @@ def dashboardhw(request):
     return render(request, 'app/dashboardhw.html',contexto)
 
 def dashboardhws(request):
-
+    cl=Cliente.objects.all()
     lista = Tarea.objects.all()
+
+    cl = Cliente.objects.filter(id=lista.contacto.cliente)
+
     print(lista)
     contexto ={
         'tareas':lista,
+        'clientes':cl,
     }
 
     return render(request, 'app/dashboardhws.html',contexto)
@@ -72,12 +76,9 @@ def icareplus(request):
     return render(request, 'app/icareplus.html')
 def netcare(request):
     clientes=Cliente.objects.all()
-    contexto ={
-    'c':clientes,
-    }
-
     owners=User.objects.all()
     contexto ={
+    'c':clientes,
     'u':owners,
     }
     return render(request, 'app/netcare.html',contexto)
@@ -87,17 +88,19 @@ def crear_tarea(request):
         titulo = request.POST['titulo']
         descripcion = request.POST['descripcion']
         fecha_vencimiento = request.POST['fecha_vencimiento']
-        Cliente = request.POST['Cliente']
-        owner = request.POST['owner']
+        cl = request.POST['cliente']
+        ow = request.POST['owner']
 
-        id_usuario=request.user.id
+        cliente= Cliente.objects.get(id=cl)
+
+        owner= User.objects.get(id=ow)
 
         t = Tarea()
         t.titulo=titulo
         t.descripcion = descripcion
         t.progreso = 0
         t.fecha_vencimiento = fecha_vencimiento
-        t.contacto_cliente=Cliente
+        t.contacto_cliente=cliente
         t.owner=owner
         t.save()
 
@@ -115,3 +118,8 @@ def profile(request):
 def vpnaccess(request):
 
     return render(request, 'app/vpnaccess.html')
+
+
+def ejecutartarea(request):
+
+    return render(request, 'app/ejecutartarea.html')

@@ -14,5 +14,6 @@ urlpatterns = [
     path('crear_tarea/', views.crear_tarea, name='crear_tarea'),
     path('onebox/', views.onebox, name='onebox'), 
     path('profile/', views.profile, name='profile'), 
-    path('vpnaccess/', views.vpnaccess, name='vpnaccess'), 
+    path('vpnaccess/', views.vpnaccess, name='vpnaccess'),
+    path('ejecutartarea/', views.ejecutartarea, name='ejecutartarea'),
 ]
