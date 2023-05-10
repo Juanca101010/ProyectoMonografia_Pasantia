@@ -40,14 +40,16 @@ def view_logout(request):
   return redirect('app:ingresar')
 #--------------------------------------------
 def dashboardhw(request):
+    tareas = Tarea.objects.all()
+    contexto = {'tareas': []}
 
-    lista = Tarea.objects.all()
-    print(lista)
-    contexto ={
-        'tareas':lista,
-    }
+    for tarea in tareas:
+        cliente = Cliente.objects.get(id=tarea.contacto_cliente_id)
+        tarea.cliente = cliente.nombre+'-'+cliente.contacto  # Agregar el atributo "cliente" a la tarea
+        contexto['tareas'].append(tarea)
 
-    return render(request, 'app/dashboardhw.html',contexto)
+    return render(request, 'app/dashboardhw.html', contexto)
+
 
 def dashboardhws(request):
     cl=Cliente.objects.all()

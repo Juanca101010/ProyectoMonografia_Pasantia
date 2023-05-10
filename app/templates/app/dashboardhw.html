@@ -34,17 +34,17 @@
       <div class="dashboard-navy">
         <h2>Tareas</h2>
         <ul class="task-list">
-          {%for lista in tareas%}
+          {%for tarea in tareas%}
           <li>
               <table>
                 <tr>
-                  <td class="title"><h3>{{lista.titulo}}</h3></td>
+                  <td class="title"><h3>{{tarea.titulo}}</h3></td>
                   <td class="edit-btn"><button class="edit-btn">Edit</button></td>
                   <td class="compare-btn"><button class="compare-btn">Share</button></td>
-                  <td class="owner"><p>Owner: <span class="owner">{{lista.owner}}</span></p></td>
-                  <td class="progress"><p>Progreso: <span class="progress">{{lista.progreso}}</span></p></td>
-                  <td class="due-date"><p>Fecha de vencimiento: <span class="due-date">{{lista.fecha_vencimiento}}</span></p></td>
-                  <td class="contact-info"><p>Contacto: <span class="contact-info">{{lista.contacto_cliente}}</span></p></td>
+                  <td class="owner"><p>Owner: <span class="owner">{{tarea.owner}}</span></p></td>
+                  <td class="progress"><p>Progreso: <span class="progress">{{tarea.progreso}}</span></p></td>
+                  <td class="due-date"><p>Fecha de vencimiento: <span class="due-date">{{tarea.fecha_vencimiento}}</span></p></td>
+                  <td class="contact-info"><p>Contacto: <span class="contact-info">{{tarea.cliente}}</span></p></td>
                 </tr>
               </table>
           </li>
