@@ -7,7 +7,7 @@
 <head>
     <title>{% block titulo %}VPNACCESS_CS{% endblock %}</title>
     <!-- <link href="{% static 'app/css/vpnaccess.css' %}" rel="stylesheet"> -->
-    <link href="{% static 'app/css/dashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'app/css/tablasdevpndoc.css' %}" rel="stylesheet">
 
 </head>
 
@@ -32,14 +32,53 @@
           </div>
           
         <div class="barra">
-                <a href="#">Inicio</a>
-                <a href="#">Nosotros</a>
+                <a href="#">Clientes</a>
+                <a href="#">Cuentas</a>
                 <a href="#">Productos</a>
-                <a href="#">Servicios</a>
+                <a href="#">EXE</a>
                 <a href="#">Contacto</a>
+                <a href="#">Ip Addres</a>
+                <a href="#">Get Access</a>
         </div>
         <div class="contenido">
-           
+          <table>
+            <tr>
+              <th>Documento</th>
+              <th>IP</th>
+              <th>Owner</th>
+              <th>Cuenta</th>
+              <th>Buscar</th>
+              <th>Producto</th>
+              <th>Detalles</th>
+            </tr>
+            <tr>
+              <td>Documento 1</td>
+              <td>10.10.10.10</td>
+              <td>Juan Pérez</td>
+              <td><a href="#">Cuenta 1</a></td>
+              <td><a href="#">Buscar</a></td>
+              <td>Descripción del producto 1</td>
+              <td><a href="#">Detalles</a></td>
+            </tr>
+            <tr>
+              <td>Documento 2</td>
+              <td>20.20.20.20</td>
+              <td>Juan 2</td>
+              <td><a href="#">Cuenta 2</a></td>
+              <td><a href="#">Buscar</a></td>
+              <td>Descripción del producto 2</td>
+              <td><a href="#">Detalles</a></td>
+            </tr>
+            <tr>
+              <td>Documento 3</td>
+              <td>30.30.30.30</td>
+              <td>Jose 2</td>
+              <td><a href="#">Cuenta 3</a></td>
+              <td><a href="#">Buscar</a></td>
+              <td>Descripción del producto 3</td>
+              <td><a href="#">Detalles</a></td>
+            </tr>
+          </table>
               
         </div>
             

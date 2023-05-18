@@ -5,45 +5,99 @@
 <html lang="en">
 
 <head>
-    <title>{% block titulo %}ONEBOX_CS{% endblock %}</title>
-    <!-- <link href="{% static 'app/css/onebox.css' %}" rel="stylesheet"> -->
-    <link href="{% static 'app/css/dashboard.css' %}" rel="stylesheet">
+  <title>{% block titulo %}ONE BOX{% endblock %}</title>
+  <link href="{% static 'app/css/tablasdevpndoc.css' %}" rel="stylesheet">
 </head>
 
 <html>
 
 <body>
-    
-    <div id="contenedor" class="contenedor">
-        <div id="header" class="header">
-            <h2>CS Platform</h2>
-            <nav id="menu" class="menu">
-              <a href="{% url 'app:dashboardhw' %}">HOME</a>
-              <a href="{% url 'app:netcare' %}">Netcare</a>
-              <a href="{% url 'app:icareplus' %}">Icare+</a>
-              <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
-              <a href="{% url 'app:onebox' %}">One Box</a>
-              <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
-              <a href="{% url 'app:help' %}">Help</a>
-              <a href="{% url 'app:profile' %}">Profile</a>
-              <a href="{% url 'app:loginhw' %}">Log Out</a>
-            </nav>
-          </div>
-          
-        <div class="barra">
-                <a href="#">Inicio</a>
-                <a href="#">Nosotros</a>
-                <a href="#">Productos</a>
-                <a href="#">Servicios</a>
-                <a href="#">Contacto</a>
-        </div>
-        <div class="contenido">
-           
-              
-        </div>
-            
-        <div class="footer"></div>
+
+  <div id="contenedor" class="contenedor">
+    <div id="header" class="header">
+      <h2>CS Platform</h2>
+      <nav id="menu" class="menu">
+        <a href="{% url 'app:dashboardhw' %}">HOME</a>
+        <a href="{% url 'app:netcare' %}">Netcare</a>
+        <a href="{% url 'app:icareplus' %}">Icare+</a>
+        <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
+        <a href="{% url 'app:onebox' %}">One Box</a>
+        <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
+        <a href="{% url 'app:help' %}">Help</a>
+        <a href="{% url 'app:profile' %}">Profile</a>
+        <a href="{% url 'app:loginhw' %}">Log Out</a>
+      </nav>
     </div>
+
+    <div class="barra">
+      <a href="#">Datas Sheet</a>
+      <a href="#">Licencias</a>
+      <a href="#">Equipos</a>
+      <a href="#">Herramientas</a>
+      <a href="#">Contactos</a>
+    </div>
+    <div class="contenido">
+      <div class="email-container">
+        <div class="email-messages">
+          <h2>DOCS</h2>
+          <div class="email-toolbar">
+            <button class="email-btn email-btn-search">Buscar</button>
+            <button class="email-btn email-btn-new">Nuevo correo</button>
+            <button class="email-btn email-btn-share">Compartir</button>
+          </div>
+          <table>
+            <tr>
+              <th>Documento</th>
+              <th>ID</th>
+              <th>Owner</th>
+              <th>Descargar</th>
+              <th>Editar</th>
+              <th>Comentar</th>
+              <th>Buscar</th>
+              <th>Descripción</th>
+              <th>Detalles</th>
+            </tr>
+            <tr>
+              <td>Documento 1</td>
+              <td>12345</td>
+              <td>Juan Pérez</td>
+              <td><a href="#">Descargar</a></td>
+              <td><a href="#">Editar</a></td>
+              <td><a href="#">Comentar</a></td>
+              <td><a href="#">Buscar</a></td>
+              <td>Descripción del documento 1</td>
+              <td><a href="#">Detalles</a></td>
+            </tr>
+            <tr>
+              <td>Documento 2</td>
+              <td>67890</td>
+              <td>María López</td>
+              <td><a href="#">Descargar</a></td>
+              <td><a href="#">Editar</a></td>
+              <td><a href="#">Comentar</a></td>
+              <td><a href="#">Buscar</a></td>
+              <td>Descripción del documento 2</td>
+              <td><a href="#">Detalles</a></td>
+            </tr>
+          </table>
+        </div>
+        <div class="email-contacts">
+          <h2>Contactos</h2>
+          <div class="email-toolbar">
+            <button class="email-btn email-btn-search">Buscar</button>
+            <button class="email-btn email-btn-new">Nuevo chat</button>
+            <button class="email-btn email-btn-share">Compartir</button>
+          </div>
+        </div>
+      </div>
+
+
+      <script src="{% static 'app/js/emailsms.js' %}"></script> <!-- Archivo JavaScript que cambia los colores -->
+
+    </div>
+
+    <div class="footer"></div>
+  </div>
 </body>
 
 </html>
