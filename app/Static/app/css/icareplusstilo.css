@@ -1,0 +1,117 @@
+.contenedor {
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 110px 1fr 70px / 1fr 4fr;
+    grid-template-areas: 
+      "header header"
+      "contenido contenido" 
+      "footer footer";
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 128, 0.473);
+    grid-area: header;
+    flex-direction: column;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto 200%;
+    color: white;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: navy;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menu a:hover {
+    background-color: #fff;
+    color: navy;
+  }
+  
+  
+  .contenido {
+    background: #fff;
+    grid-area: contenido;
+  }
+  
+  .footer {
+    background-color: rgba(0, 0, 128, 0.473);
+    grid-area: footer;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto;
+  }
+
+
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: navy;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ccc;
+    color: white;
+  }
+
+  datos tr.noSearch {
+    background: White;
+    font-size: 0.8em;
+  }
+  
+  datos tr.noSearch td {
+    padding-top: 10px;
+    text-align: right;
+  }
+  
+  .hide {
+    display: none;
+  }
+
+  .search{
+    padding: 20px;
+    font-size: large;
+    display:inline-flex;
+    background-color: navy;
+    border-radius: 30px;
+    margin: 10px;
+    color: white;
+  }
+
+  .search > input{
+    border-radius: 30px;
+  }
+  .search > p{
+    padding-right: 20px;
+  }

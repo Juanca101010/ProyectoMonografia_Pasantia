@@ -7,7 +7,7 @@
 <head>
     <title>{% block titulo %}ICAREPLUS_CS{% endblock %}</title>
     <!-- <link href="{% static 'app/css/icareplus.css' %}" rel="stylesheet"> -->
-    <link href="{% static 'app/css/dashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'app/css/icareplusstilo.css' %}" rel="stylesheet">
 
 </head>
 
@@ -30,21 +30,111 @@
               <a href="{% url 'app:loginhw' %}">Log Out</a>
             </nav>
           </div>
-          
-        <div class="barra">
-                <a href="#">Inicio</a>
-                <a href="#">Nosotros</a>
-                <a href="#">Productos</a>
-                <a href="#">Servicios</a>
-                <a href="#">Contacto</a>
-        </div>
+
         <div class="contenido">
-           
+          <form class="search">
+
+           <p>Buscar Ticket</p>  <input id="searchTerm" type="text" onkeyup="doSearch()" />
+    
+        </form>
+          <table id="datos">
+            <tr>
+              <th>SR ID</th>
+              <th>SEVERITY</th>
+              <th>STATUS</th>
+              <th>LOCAL ASSIGNEE</th>
+              <th>SUMMARY</th>
+              <th>REPORT DATE</th>
+              <th>DURATION</th>
+              <th>END TIME</th>
+              <th>SLA DUE DATE</th>
+              <th>CUSTOMER</th> 
+              <th>PRODUCT</th> 
+              <th>OWNER</th> 
+              <th>REUQUEST TIPE</th> 
+              <th>ML&TD COMMENTS</th> 
+              <th>CUSTOMER COMMENTS</th> 
+            </tr>
+            <tr>
+              <td>1111111</td>
+              <td>MAJOR</td>
+              <td>OPEN</td>
+              <td>JUAN 1</td>
+              <td>THIS IS THE SUMMARY OF THE SR</td>
+              <td>10/10/2023</td>
+              <td>10 DAYS</td>
+              <td>10/10/2023</td>
+              <td>10/10/2023</td>
+              <td>customer 1</td>
+              <td>product 1</td>
+              <td>jose 1</td>
+              <td>CS / tecnical</td>
+              <td>n&a</td>
+              <td>n&a</td>
+            </tr>
+            <tr>
+              <td>1111111</td>
+              <td>MAJOR</td>
+              <td>OPEN</td>
+              <td>JUAN 1</td>
+              <td>THIS IS THE SUMMARY OF THE SR</td>
+              <td>10/10/2023</td>
+              <td>10 DAYS</td>
+              <td>10/10/2023</td>
+              <td>10/10/2023</td>
+              <td>customer 1</td>
+              <td>product 1</td>
+              <td>jose 1</td>
+              <td>CS / tecnical</td>
+              <td>n&a</td>
+              <td>n&a</td>
+            </tr>
+            <tr>
+              <td>112222</td>
+              <td>MINOR</td>
+              <td>OPEN</td>
+              <td>user 2</td>
+              <td>THIS IS THE SUMMARY OF THE SR</td>
+              <td>10/20/2023</td>
+              <td>13 DAYS</td>
+              <td>10/3/2023</td>
+              <td>10/3/2023</td>
+              <td>customer 1</td>
+              <td>product 1</td>
+              <td>jose 2</td>
+              <td>CS</td>
+              <td>n&a</td>
+              <td>n&a</td>
+            </tr>
+            <tr>
+              <td>222222</td>
+              <td>MAJOR</td>
+              <td>l2</td>
+              <td>JUAN 2</td>
+              <td>THIS IS THE SUMMARY OF THE SR</td>
+              <td>10/10/2023</td>
+              <td>5 DAYS</td>
+              <td>20/10/2023</td>
+              <td>20/10/2023</td>
+              <td>customer 2</td>
+              <td>product 2</td>
+              <td>maria 1</td>
+              <td>tecnical</td>
+              <td>n&a</td>
+              <td>n&a</td>
+            </tr>
+            <tr class='noSearch hide'>
+
+              <td colspan="5"></td>
+
+          </tr>
+          </table>
               
         </div>
             
         <div class="footer"></div>
     </div>
+    <script src="{% static 'app/js/searchtable.js' %}"></script>
 </body>
 
 </html>
