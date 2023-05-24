@@ -150,14 +150,7 @@
   .email-btn:active {
     transform: translateY(1px);
   }
-  
-  .email-btn-search {
-    background-color: #fff;
-    color: #333;
-    border: 2px solid #333;
-    border-radius: 5px;
-    padding: 5px 10px;
-  }
+
   
   /* Estilos para la lista de mensajes */
   .email-message-list {
@@ -270,4 +263,13 @@
   tr:hover {
     background-color: #ccc;
     color: white;
+  }
+
+  .search > p{
+    color: white;
+    padding-right: 10px;
+  }
+  .search > p > input{
+    border-radius: 30px;
+    height: 40px;
   }

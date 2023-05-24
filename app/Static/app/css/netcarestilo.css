@@ -348,21 +348,42 @@ select {
 
 /* Estilos para la tabla */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-th,
-td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: navy;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ccc;
+  color: white;
+}
+
+datos tr.noSearch {
+  background: White;
+  font-size: 0.8em;
+}
+
+datos tr.noSearch td {
+  padding-top: 10px;
+  text-align: right;
 }
 
 /* Estilos para los títulos */
 h2 {
-    color: #333;
+    color: #ffffff;
     margin-top: 30px;
 }
 

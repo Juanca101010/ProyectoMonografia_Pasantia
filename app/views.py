@@ -79,10 +79,18 @@ def icareplus(request):
 def netcare(request):
     clientes=Cliente.objects.all()
     owners=User.objects.all()
+    tareas = Tarea.objects.all()
     contexto ={
+    'tareas': [],
     'c':clientes,
     'u':owners,
     }
+
+    for tarea in tareas:
+        cliente = Cliente.objects.get(id=tarea.contacto_cliente_id)
+        tarea.cliente = cliente.nombre+'-'+cliente.contacto  # Agregar el atributo "cliente" a la tarea
+        contexto['tareas'].append(tarea)
+
     return render(request, 'app/netcare.html',contexto)
 
 def crear_tarea(request):

@@ -41,11 +41,15 @@
         <div class="email-messages">
           <h2>DOCS</h2>
           <div class="email-toolbar">
-            <button class="email-btn email-btn-search">Buscar</button>
+            <form class="search">
+
+              <p>Search <input id="searchTerm" type="text" onkeyup="doSearch()" /></p>
+       
+           </form>
             <button class="email-btn email-btn-new">Nuevo correo</button>
             <button class="email-btn email-btn-share">Compartir</button>
           </div>
-          <table>
+          <table id="datos">
             <tr>
               <th>Documento</th>
               <th>ID</th>
@@ -79,12 +83,17 @@
               <td>Descripción del documento 2</td>
               <td><a href="#">Detalles</a></td>
             </tr>
+            <tr class='noSearch hide'>
+
+              <td colspan="5"></td>
+
+          </tr>
           </table>
         </div>
         <div class="email-contacts">
           <h2>Contactos</h2>
           <div class="email-toolbar">
-            <button class="email-btn email-btn-search">Buscar</button>
+            <div class="email-toolbar">
             <button class="email-btn email-btn-new">Nuevo chat</button>
             <button class="email-btn email-btn-share">Compartir</button>
           </div>
@@ -98,6 +107,7 @@
 
     <div class="footer"></div>
   </div>
+  <script src="{% static 'app/js/searchtable.js' %}"></script>
 </body>
 
 </html>
