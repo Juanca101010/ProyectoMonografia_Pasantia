@@ -13,6 +13,10 @@ def loginhw(request):
 
     return render(request, 'app/loginhw.html')
 
+def restorepass(request):
+
+    return render(request, 'app/restorepass.html')
+
 def autenticar(request):
     if request.method == 'POST':
         username = request.POST['username']

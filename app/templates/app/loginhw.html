@@ -14,7 +14,9 @@
         <input type="text" name="username">
         <label>PASSWORD</label>
         <input type="password" name="password">
-        <button type="submit" class="botonl"> Login</button>
+        <br>
+        <a type="submit" class="botonl"> Login</a>
+        <a href="{% url 'app:restorepass' %}" class="botonl"> Restore Password</a>
         <a href="{% url 'app:dashboardhw' %}"  class="botonl">Ingresar Junior</a>
         <a href="{% url 'app:dashboardhws' %}"  class="botonl">Ingresar Senior</a>
       </form>

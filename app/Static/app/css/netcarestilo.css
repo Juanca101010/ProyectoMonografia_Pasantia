@@ -357,6 +357,10 @@ th, td {
   padding: 8px;
 }
 
+/* .title {
+  max-width: 100px;
+} */
+
 th {
   background-color: navy;
   color: white;

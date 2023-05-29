@@ -18,16 +18,21 @@ body {
         display: flex;
         padding: 0 16px;
         flex-wrap: wrap;
+        
       }
     
     form {
-        padding: 0;
         flex-wrap: wrap;
-        display: block;
         position: absolute;
         color: white;
-        top: 300px;
-        right: 350px;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 8000px;
+        top: 30%;
+        display: flex;
+        flex-direction: column;
       }
       
       
@@ -59,12 +64,22 @@ body {
         background: white;
         box-shadow:#000;
       }
-      
-      button:hover {
+
+      a {
         letter-spacing: 2px;
         box-shadow: none;
         background-color: white;
         color: navy;
+        padding: 5px;
+        text-decoration: none;
+        margin-bottom: 5px;
+      }
+      
+      a:hover {
+        letter-spacing: 2px;
+        box-shadow: none;
+        background-color: navy;
+        color: white;
       }
       
       .boton1 {
@@ -72,4 +87,10 @@ body {
         border-radius: 30px;
         background-color: navy;
         color: white;
+      }
+
+      select, select > option{
+        padding: 10px;
+        background-color: white;
+        color: navy;
       }
