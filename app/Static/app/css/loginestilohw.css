@@ -24,7 +24,7 @@ body {
     form {
         flex-wrap: wrap;
         position: absolute;
-        color: white;
+        color: black;
         margin: 0;
         justify-content: center;
         align-items: center;
@@ -42,7 +42,7 @@ body {
       textarea {
         padding: 10px;
         margin-bottom: 10px;
-        color: white;
+        color: black;
       }
       
       
@@ -52,7 +52,6 @@ body {
       
       input,
       textarea {
-        background: white;
         border: none;
         border-radius: 4px;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -61,11 +60,10 @@ body {
       
       input:focus,
       textarea:focus {
-        background: white;
         box-shadow:#000;
       }
 
-      a {
+      a, button {
         letter-spacing: 2px;
         box-shadow: none;
         background-color: white;
@@ -75,15 +73,14 @@ body {
         margin-bottom: 5px;
       }
       
-      a:hover {
-        letter-spacing: 2px;
+      a:hover, button:hover {
+        letter-spacing: 2px;  
         box-shadow: none;
         background-color: navy;
         color: white;
       }
       
       .boton1 {
-        color: white;
         border-radius: 30px;
         background-color: navy;
         color: white;

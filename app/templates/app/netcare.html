@@ -39,197 +39,213 @@
       <a href="#">Client</a>
     </div>
     <div class="contenido">
-     
 
-        <div class="tab-buttons">
-          <button class="tab-button">Precautions</button>
-          <button class="tab-button">Rectification</button>
-          <button class="tab-button">Risk</button>
-          <button class="tab-button">Healthcheck</button>
-          <button class="tab-button">RFC</button>
-          <button class="tab-button">New Task</button>
-        </div>
 
-        <div class="tab active">
-          <h2>Precautions</h2>
-          {%for tarea in tareas%}
-          <li>
-              <table id="datos">
-                <tr>
-                  <td class="title"><h3>{{tarea.titulo}}</h3></td>
-                  <td class="edit-btn"><button class="edit-btn">Edit</button></td>
-                  <td class="compare-btn"><button class="compare-btn">Share</button></td>
-                  <td class="owner"><p>Owner: <span class="owner">{{tarea.owner}}</span></p></td>
-                  <td class="progress"><p>Progreso: <span class="progress">{{tarea.progreso}}</span></p></td>
-                  <td class="due-date"><p>Fecha de vencimiento: <span class="due-date">{{tarea.fecha_vencimiento}}</span></p></td>
-                  <td class="contact-info"><p>Contacto: <span class="contact-info">{{tarea.cliente}}</span></p></td>
-                </tr>
-              </table>
-          </li>
-          {% endfor %}
-        </div>
+      <div class="tab-buttons">
+        <button class="tab-button">Precautions</button>
+        <button class="tab-button">Rectification</button>
+        <button class="tab-button">Risk</button>
+        <button class="tab-button">Healthcheck</button>
+        <button class="tab-button">RFC</button>
+        <button class="tab-button">New Task</button>
+      </div>
 
-        <div class="tab">
-          <h2>Rectification</h2>
-          <table id="device-info">
-            <thead>
-              <tr>
-                <th>Dispositivo</th>
-                <th>Afección</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Dispositivo 1</td>
-                <td>Afección 1</td>
-              </tr>
-              <tr>
-                <td>Dispositivo 2</td>
-                <td>Afección 2</td>
-              </tr>
-              <tr>
-                <td>Dispositivo 3</td>
-                <td>Afección 3</td>
-              </tr>
-            </tbody>
+      <div class="tab active">
+        <h2>Precautions</h2>
+        {%for tarea in tareas%}
+        <li>
+          <table id="datos">
+            <tr>
+              <td class="title">
+                <h3>{{tarea.titulo}}</h3>
+              </td>
+              <td class="edit-btn"><button class="edit-btn">Edit</button></td>
+              <td class="compare-btn"><button class="compare-btn">Share</button></td>
+              <td class="owner">
+                <p>Owner: <span class="owner">{{tarea.owner}}</span></p>
+              </td>
+              <td class="progress">
+                <p>Progreso: <span class="progress">{{tarea.progreso}}</span></p>
+              </td>
+              <td class="due-date">
+                <p>Fecha de vencimiento: <span class="due-date">{{tarea.fecha_vencimiento}}</span></p>
+              </td>
+              <td class="contact-info">
+                <p>Contacto: <span class="contact-info">{{tarea.cliente}}</span></p>
+              </td>
+            </tr>
           </table>
-        </div>
+        </li>
+        {% endfor %}
+      </div>
 
-        <div class="tab">
-          <h2>Risk</h2>
-          <table id="device-info">
-            <thead>
-              <tr>
-                <th>Dispositivo</th>
-                <th>Afección</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Dispositivo 1</td>
-                <td>Afección 1</td>
-              </tr>
-              <tr>
-                <td>Dispositivo 2</td>
-                <td>Afección 2</td>
-              </tr>
-              <tr>
-                <td>Dispositivo 3</td>
-                <td>Afección 3</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="tab">
+        <h2>Rectification</h2>
+        <table id="device-info">
+          <thead>
+            <tr>
+              <th>Dispositivo</th>
+              <th>Afección</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dispositivo 1</td>
+              <td>Afección 1</td>
+            </tr>
+            <tr>
+              <td>Dispositivo 2</td>
+              <td>Afección 2</td>
+            </tr>
+            <tr>
+              <td>Dispositivo 3</td>
+              <td>Afección 3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="tab">
-          <h2>Healthcheck</h2>
-          <table id="device-info">
-            <thead>
-              <tr>
-                <th>Dispositivo</th>
-                <th>Afección</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Dispositivo 1</td>
-                <td>Afección 1</td>
-              </tr>
-              <tr>
-                <td>Dispositivo 2</td>
-                <td>Afección 2</td>
-              </tr>
-              <tr>
-                <td>Dispositivo 3</td>
-                <td>Afección 3</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="tab">
+        <h2>Risk</h2>
+        <table id="device-info">
+          <thead>
+            <tr>
+              <th>Dispositivo</th>
+              <th>Afección</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dispositivo 1</td>
+              <td>Afección 1</td>
+            </tr>
+            <tr>
+              <td>Dispositivo 2</td>
+              <td>Afección 2</td>
+            </tr>
+            <tr>
+              <td>Dispositivo 3</td>
+              <td>Afección 3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tab">
+        <h2>Healthcheck</h2>
+        <table id="device-info">
+          <thead>
+            <tr>
+              <th>Dispositivo</th>
+              <th>Afección</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dispositivo 1</td>
+              <td>Afección 1</td>
+            </tr>
+            <tr>
+              <td>Dispositivo 2</td>
+              <td>Afección 2</td>
+            </tr>
+            <tr>
+              <td>Dispositivo 3</td>
+              <td>Afección 3</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="tab">
         <h2>RFC</h2>
-          <table id="device-info">
-            <thead>
-              <tr>
-                <th>Dispositivo</th>
-                <th>Afección</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Dispositivo 1</td>
-                <td>Afección 1</td>
-              </tr>
-              <tr>
-                <td>Dispositivo 2</td>
-                <td>Afección 2</td>
-              </tr>
-              <tr>
-                <td>Dispositivo 3</td>
-                <td>Afección 3</td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
-
-          <div class="tab">
-            <h2>Nex Task</h2>
-            <form action="{% url 'app:crear_tarea' %}" method="post">
-              {% csrf_token %}
-              <div class="field" tabindex="1">
-                <label for="titulo">
-                  <i class="far fa-user"></i>Titulo
-                </label>
-                <input name="titulo" type="text" placeholder="TItulo de tarea" required>
-              </div>
-              <div class="field" tabindex="2">
-                <label for="descripcion">
-                  <i class="far fa-envelope"></i>Descripción
-                </label>
-                <input name="descripcion" type="text" placeholder="Descripción de tarea" required>
-              </div>
-              <div class="field" tabindex="3">
-                <label for="fecha_vencimiento">
-                  <i class="far fa-edit"></i>Fecha de vencimiento
-                </label>
-                <input type="date" name="fecha_vencimiento" placeholder="type here" required></input>
-              </div>
-              <div class="field" tabindex="2">
-                <label for="cliente">
-                  <i class="far fa-envelope"></i>Cliente
-                </label>
-                <select name="cliente">
-                  {%for clientes in c%}
-                  <option value={{clientes.id}}>{{clientes.nombre}} {{clientes.contacto}}</option>
-                  {% endfor %}
-                </select>
-              </div>
-              <div class="field" tabindex="2">
-                <label for="owner">
-                  <i class="far fa-envelope"></i>Owner
-                </label>
-                <select name="owner">
-                  {%for owners in u%}
-                  <option value={{owners.id}}>{{owners.username}} {{owners.email}}</option>
-                  {% endfor %}
-                </select>
-              </div>
-              <button type="submit" class="crear"> CREAR</button>
-            </form>
-          </div>
+        <table id="device-info">
+          <thead>
+            <tr>
+              <th>Dispositivo</th>
+              <th>Afección</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dispositivo 1</td>
+              <td>Afección 1</td>
+            </tr>
+            <tr>
+              <td>Dispositivo 2</td>
+              <td>Afección 2</td>
+            </tr>
+            <tr>
+              <td>Dispositivo 3</td>
+              <td>Afección 3</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
+      <div class="tab">
+        <h2>Nex Task</h2>
+        <button id="create">Create Task</button>
+      </div>
 
-
-      <a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank"
-        style="color:#000"></a>
-
-
-
+      <div class="createtask">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Create Task</h2>
+      <form action="{% url 'app:crear_tarea' %}" method="post">
+        {% csrf_token %}
+        <div class="field" tabindex="1">
+          <label for="titulo">
+            <i class="far fa-user"></i>Titulo
+          </label>
+          <input name="titulo" type="text" placeholder="TItulo de tarea" required>
+        </div>
+        <div class="field" tabindex="2">
+          <label for="descripcion">
+            <i class="far fa-envelope"></i>Descripción
+          </label>
+          <input name="descripcion" type="text" placeholder="Descripción de tarea" required>
+        </div>
+        <div class="field" tabindex="3">
+          <label for="fecha_vencimiento">
+            <i class="far fa-edit"></i>Fecha de vencimiento
+          </label>
+          <input type="date" name="fecha_vencimiento" placeholder="type here" required></input>
+        </div>
+        <div class="field" tabindex="2">
+          <label for="cliente">
+            <i class="far fa-envelope"></i>Cliente
+          </label>
+          <select name="cliente">
+            {%for clientes in c%}
+            <option value={{clientes.id}}>{{clientes.nombre}} {{clientes.contacto}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field" tabindex="2">
+          <label for="owner">
+            <i class="far fa-envelope"></i>Owner
+          </label>
+          <select name="owner">
+            {%for owners in u%}
+            <option value={{owners.id}}>{{owners.username}} {{owners.email}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="submit-btn"> CREATE</button>
+      </form>
     </div>
+  </div>
 
-    <div class="footer"></div>
+
+
+  <a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank" style="color:#000"></a>
+
+
+
+  </div>
+
+  <div class="footer"></div>
   </div>
   <script src="{% static 'app/js/newtask.js' %}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

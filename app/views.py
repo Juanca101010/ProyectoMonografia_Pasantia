@@ -24,15 +24,10 @@ def autenticar(request):
         user = authenticate(request, username=username, password=password)
         print(user)
         if user is not None:
-            print(username)
-            print(password)
-            if request.user.is_superuser:
-                return redirect('app:dashboardhw')
+            if user.is_superuser:
+                return redirect('app:dashboardhws')  # Redirige a la página de inicio de sesión para superusuarios
             else:
-                return redirect('app:dashboardhw')
-        else:
-            # Si el usuario no existe, devuelve una respuesta con el mensaje de error.
-            return render(request, "app/loginhw.html", {'error_message': 'Usuario o contraseña incorrecta'})
+                return redirect('app:dashboardhw')  # Redirige a la página de inicio de sesión para usuarios no superadministradores
     else:
         return render(request, "app/loginhw.html")
 
@@ -56,16 +51,13 @@ def dashboardhw(request):
 
 
 def dashboardhws(request):
-    cl=Cliente.objects.all()
-    lista = Tarea.objects.all()
+    tareas = Tarea.objects.all()
+    contexto = {'tareas': []}
 
-    cl = Cliente.objects.filter(id=lista.contacto.cliente)
-
-    print(lista)
-    contexto ={
-        'tareas':lista,
-        'clientes':cl,
-    }
+    for tarea in tareas:
+        cliente = Cliente.objects.get(id=tarea.contacto_cliente_id)
+        tarea.cliente = cliente.nombre+'-'+cliente.contacto  # Agregar el atributo "cliente" a la tarea
+        contexto['tareas'].append(tarea)
 
     return render(request, 'app/dashboardhws.html',contexto)
 
@@ -96,6 +88,31 @@ def netcare(request):
         contexto['tareas'].append(tarea)
 
     return render(request, 'app/netcare.html',contexto)
+
+
+def ADMIN(request):
+    try:
+        usern = request.POST['usern']
+        name1 = request.POST['name1']
+        name2 = request.POST['name2']
+        email = request.POST['email']
+        password = request.POST['pass']
+        superu = bool(int(request.POST['superu']))  # Convert superu to boolean
+
+        u = User()
+        u.first_name = name1
+        u.last_name = name2
+        u.email = email
+        u.is_superuser = superu
+        u.set_password(password)  # Use set_password to securely store the password
+        u.username = usern
+        u.save()
+
+        return redirect('app:ADMIN')
+    except Exception as e:
+        print(e)
+    return render(request, 'app/ADMIN.html')
+
 
 def crear_tarea(request):
     try:

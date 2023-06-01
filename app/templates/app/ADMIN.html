@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+  <title>{% block titulo %}ADMIN{% endblock %}</title>
+  <!-- <link href="{% static 'app/css/netcare.css' %}" rel="stylesheet"> -->
+  <link href="{% static 'app/css/netcarestilo.css' %}" rel="stylesheet">
+
+</head>
+
+<html>
+
+<body>
+
+  <div id="contenedor" class="contenedor">
+    <div id="header" class="header">
+      <h2>CS Platform</h2>
+      <nav id="menu" class="menu">
+        <a href="{% url 'app:ADMIN' %}">ADMIN</a>
+      </nav>
+    </div>
+
+    <div class="contenido">
+          <h2>Create USER</h2>
+            <form action="{% url 'app:ADMIN' %}" method="post">
+              {% csrf_token %}
+              <div class="field" >
+                <label>
+                  <i class="far fa-user"></i>NOMBRE DE USUARIO
+                </label>
+                <input type="text" name="usern"  required>
+              </div>
+              <div class="field" >
+                <label >
+                  <i class="far fa-envelope"></i>NOMBRE
+                </label>
+                <input name="name1" type="text"  required>
+              </div>
+              <div class="field" >
+                <label>
+                  <i class="far fa-edit"></i>APELLIDOS
+                </label>
+                <input type="text" name="name2" ></input>
+              </div>
+              <div class="field" >
+                <label>
+                  <i class="far fa-edit"></i>EMAIL
+                </label>
+                <input type="text" name="email" ></input>
+              </div>
+              <div class="field" >
+                <label>
+                  <i class="far fa-edit"></i>PASSWORD
+                </label>
+                <input type="password" name="pass" ></input>
+              </div>
+              <div class="field"  style="display: inline-block;">
+                <label for="opcion1">ES SENIOR</label>
+                <input type="radio" id="opcion1" name="superu" value="1">
+                <label for="opcion2">ES JUNIOR</label>
+                <input type="radio" id="opcion2" name="superu" value="0">
+              </div>
+              <br>
+              <button type="submit" class="crear"> CREAR</button>
+            </form>
+          </div>
+    </div>
+
+    <div class="footer"></div>
+  </div>
+</body>
+
+</html>

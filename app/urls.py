@@ -4,6 +4,7 @@ from . import views
 app_name = 'app' 
 urlpatterns = [
     path('loginhw/', views.loginhw, name='loginhw'),
+    path('ADMIN/', views.ADMIN, name='ADMIN'),
     path('restorepass/', views.restorepass, name='restorepass'),
     path('autenticar/', views.autenticar, name='autenticar'),  
     path('', views.dashboardhw, name='dashboardhw'), 

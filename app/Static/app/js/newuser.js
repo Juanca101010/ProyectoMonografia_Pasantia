@@ -1,6 +1,5 @@
-var createTaskBtn = document.getElementById("create");
-var modal = document.querySelector(".createtask");
-var closeBtn = document.querySelector(".createtask .close");
+var modal = document.querySelector(".contenido");
+var closeBtn = document.querySelector(".contenido .close");
 
 createTaskBtn.onclick = function () {
   modal.style.display = "block";

@@ -8,17 +8,15 @@
   </head>
   <body>
     <form action="{% url 'app:autenticar' %}" method="POST">
+      {% csrf_token %}
       <h2>Login To Your Account</h2>
-        {% csrf_token %}
         <label>USER</label>
-        <input type="text" name="username">
+        <input type="text" name="username" style="color: black;"> 
         <label>PASSWORD</label>
-        <input type="password" name="password">
+        <input type="password" name="password" style="color: black;">
         <br>
-        <a type="submit" class="botonl"> Login</a>
-        <a href="{% url 'app:restorepass' %}" class="botonl"> Restore Password</a>
-        <a href="{% url 'app:dashboardhw' %}"  class="botonl">Ingresar Junior</a>
-        <a href="{% url 'app:dashboardhws' %}"  class="botonl">Ingresar Senior</a>
+        <button type="submit" > Login</button>
+        <a href="{% url 'app:restorepass' %}" > Restore Password</a>
       </form>
   </body>
 </html>
