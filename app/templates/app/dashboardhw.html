@@ -32,11 +32,19 @@
 
     <div class="contenido">
       <div class="dashboard-navy">
+        
         <h2>Tareas</h2>
-        <ul class="task-list">
-          {%for tarea in tareas%}
-          <li>
               <table>
+                <tr>
+                  <th>ID TASK</th>
+                  <th>EDIT</th>
+                  <th>SHARE</th>
+                  <th>OWNER</th>
+                  <th>PROGRESS</th>
+                  <th>DUE DATE</th>
+                  <th>CUSTOMER</th>
+                </tr>
+                {%for tarea in tareas%}
                 <tr>
                   <td class="title"><h3>{{tarea.titulo}}</h3></td>
                   <td class="edit-btn"><button class="edit-btn">Edit</button></td>
@@ -46,10 +54,8 @@
                   <td class="due-date"><p>Fecha de vencimiento: <span class="due-date">{{tarea.fecha_vencimiento}}</span></p></td>
                   <td class="contact-info"><p>Contacto: <span class="contact-info">{{tarea.cliente}}</span></p></td>
                 </tr>
+                {% endfor %}
               </table>
-          </li>
-          {% endfor %}
-        </ul>
       </div>
 
     </div>
