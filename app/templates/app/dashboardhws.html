@@ -36,8 +36,8 @@
 
       <div class="tab-buttons">
         <button class="tab-button">NOW TASKS</button>
+        <button class="tab-button">DELETE TASK</button>
         <button class="tab-button">CHANGE TASK</button>
-        <button class="tab-button">DELTE TASK</button>
       </div>
 
       <div class="tab active">
@@ -76,7 +76,38 @@
       </div>
 
       <div class="tab">
-        <h1>esta es otra pestaña de prueba</h1>
+        <table>
+          <tr>
+            <th>ID TASK</th>
+            <th>OWNER</th>
+            <th>PROGRESS</th>
+            <th>DUE DATE</th>
+            <th>CUSTOMER</th>
+            <th>CHANGE</th>
+          </tr>
+          <tr>
+            {%for tarea in tareas%}
+            <td class="title">
+              <h3>{{tarea.titulo}}</h3>
+            </td>
+            <td class="owner">
+              <p>Owner: <span class="owner">{{tarea.owner}}</span></p>
+            </td>
+            <td class="progress">
+              <p>Progress: <span class="progress">{{tarea.progreso}}</span></p>
+            </td>
+            <td class="due-date">
+              <p>End Date: <span class="due-date">{{tarea.fecha_vencimiento}}</span></p>
+            </td>
+            <td class="contact-info">
+              <p>Contact: <span class="contact-info">{{tarea.cliente}}</span></p>
+            </td>
+            <td class=" change">
+              <button value="{{tarea.id}}" class="compare-btn">Deltete</button>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
 
       <div class="tab">
@@ -106,7 +137,13 @@
             <td class="contact-info">
               <p>Contacto: <span class="contact-info">{{tarea.cliente}}</span></p>
             </td>
-            <td class="compare-btn"><button class="compare-btn">Delete</button></td>
+            <td class="change">
+              <form action="{% url 'app:edit_task' tarea.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="submit-btn">Change</button>
+              </form>              
+            </td> 
+            
           </tr>
           {% endfor %}
         </table>

@@ -1,47 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Login To Your Account</title>
-    <link href="{% static 'app/css/loginestilohw.css' %}" rel="stylesheet">
-  </head>
-  <body>
-    <form action="{ruta_de_envío}" method="POST">
-        {% csrf_token %}
-        <h3>Reset Password</h3>
-        <label for="reset-method">Select reset method:</label>
-        <select id="reset-method" name="reset-method">
-          <option value="username">Username</option>
-          <option value="email">Email</option>
-        </select>
-        <br>
-        <div id="username-field" style="display: none;">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username">
-        </div>
-        <div id="email-field" style="display: none;">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email">
-        </div>
-        <a type="submit">Reset Password</a>
-        <a href="{% url 'app:loginhw' %}" type="submit">Back to Login</a>
-      </form>
-      
-      <script>
-        const resetMethodSelect = document.getElementById('reset-method');
-        const usernameField = document.getElementById('username-field');
-        const emailField = document.getElementById('email-field');
-      
-        resetMethodSelect.addEventListener('change', function() {
-          const selectedMethod = resetMethodSelect.value;
-          if (selectedMethod === 'username') {
-            usernameField.style.display = 'block';
-            emailField.style.display = 'none';
-          } else if (selectedMethod === 'email') {
-            usernameField.style.display = 'none';
-            emailField.style.display = 'block';
-          }
-        });
-      </script>
-      
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login To Your Account</title>
+  <link href="{% static 'app/css/loginestilohw.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <form action="{% url 'app:restorepass' %}" method="POST">
+    {% csrf_token %}
+    <h3>Reset Password</h3>
+    <br>
+    <div id="username-field">
+      <label >Username:</label>
+      <input  type="text" name="userr">
+    </div>
+    <button type="submit">Reset Password</button>
+    <a href="{% url 'app:loginhw' %}">Back to Login</a>
+  </form>
+
+</html>

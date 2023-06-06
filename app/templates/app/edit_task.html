@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <title>{% block titulo %}EDIT TASK{% endblock %}</title>
+    <!-- <link href="{% static 'app/css/netcare.css' %}" rel="stylesheet"> -->
+    <link href="{% static 'app/css/netcarestilo.css' %}" rel="stylesheet">
+
+</head>
+
+<html>
+
+<body>
+
+    <div id="contenedor" class="contenedor">
+        <div id="header" class="header">
+            <h2>CS Platform</h2>
+            <nav id="menu" class="menu">
+                <a href="{% url 'app:dashboardhws' %}">Return Home</a>
+            </nav>
+        </div>
+
+        <div class="contenido">
+            {%for task in task%}
+            <label for="">Tarea con el ID</label>
+            <label>{{task.id}}</label>
+            {% endfor %}
+            <h1>DESEA EDITAR</h1>
+            <table>
+                <tr>
+                    <th>Nomnre Actual</th>
+                    <th>Nombre Nuevo</th>
+                </tr>
+                <tr>
+                    {%for task in task%}
+                    <td class="title">
+                        <h3>{{task.titulo}}</h3>
+                    </td>
+                    <td>
+                        <form action="{% url 'app:edit_task2' task.id %}" method="post">
+                            {% csrf_token %}
+                            <label for="">Nuevo titulo</label>
+                            <input name="ntitulo" value="ntitulo" type="text">
+                            <button type="submit" class="submit-btn"> Update</button>
+                        </form>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {%for task in task%}
+                    <td class="title">
+                        <h3>{{task.descripcion}}</h3>
+                    </td>
+                    <td>
+                        <form action="{% url 'app:edit_task2' task.id %}" method="post">
+                            {% csrf_token %}
+                            <label for="">New Description</label>
+                            <input name="ntitulo" value="ntitulo" type="text">
+                            <button type="submit" class="submit-btn"> Update</button>
+                        </form>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {%for task in task%}
+                    <td class="title">
+                        <h3>{{task.fecha_vencimiento}}</h3>
+                    </td>
+                    <td>
+                        <form action="{% url 'app:edit_task2' task.id %}" method="post">
+                            {% csrf_token %}
+                            <label for="">New end date</label>
+                            <input name="ntitulo" value="ntitulo" type="date">
+                            <button type="submit" class="submit-btn"> Update</button>
+                        </form>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {%for task in task%}
+                    <td class="title">
+                        <h3>{{task.contacto_cliente}}</h3>
+                    </td>
+                    <td>
+                        <form action="{% url 'app:edit_task2' task.id %}" method="post">
+                            {% csrf_token %}
+                            <label for="">New customer</label>
+                            <!-- <select name="cliente">
+                                {%for clientes in c%}
+                                <option value={{clientes.id}}>{{clientes.nombre}} {{clientes.contacto}}</option>
+                                {% endfor %}
+                            </select> -->
+                            <button type="submit" class="submit-btn"> Update</button>
+                        </form>
+                    </td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {%for task in task%}
+                    <td class="title">
+                        <h3>{{task.owner_id}}</h3>
+                    </td>
+                    <td>
+                        <form action="{% url 'app:edit_task2' task.id %}" method="post">
+                            {% csrf_token %}
+                            <label for="">New Owner</label>
+                            <!-- <select name="owner">
+                                {%for owners in u%}
+                                <option value={{owners.id}}>{{owners.username}} {{owners.email}}</option>
+                                {% endfor %}
+                            </select> -->
+                            <button type="submit" class="submit-btn"> Update</button>
+                        </form>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>

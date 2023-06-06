@@ -1,13 +1,14 @@
 from django.urls import path 
 from . import views 
+from app.views import RestorePassView
 
 app_name = 'app' 
 urlpatterns = [
-    path('loginhw/', views.loginhw, name='loginhw'),
+    path('', views.loginhw, name='loginhw'),
     path('ADMIN/', views.ADMIN, name='ADMIN'),
-    path('restorepass/', views.restorepass, name='restorepass'),
+    path('restorepass/', RestorePassView.as_view(), name='restorepass'),
     path('autenticar/', views.autenticar, name='autenticar'),  
-    path('', views.dashboardhw, name='dashboardhw'), 
+    path('dashboardhw', views.dashboardhw, name='dashboardhw'), 
     path('dashboardhws', views.dashboardhws, name='dashboardhws'), 
     path('smsEmail/', views.smsEmail, name='smsEmail'),  
     path('help/', views.help, name='help'), 
@@ -18,4 +19,6 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'), 
     path('vpnaccess/', views.vpnaccess, name='vpnaccess'),
     path('ejecutartarea/', views.ejecutartarea, name='ejecutartarea'),
+    path('edit_task/<int:task_id>/', views.edit_task, name='edit_task'),
+    path('edit_task2/<int:task_id>/', views.edit_task2, name='edit_task2'),
 ]

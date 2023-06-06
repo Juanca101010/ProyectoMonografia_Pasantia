@@ -5,7 +5,10 @@ from django.contrib.auth import authenticate, login, logout
 from datetime import datetime
 from app.models import Cliente, Correo, Documentacion, Tarea, Usuario, VPN 
 from django.contrib.auth.models import User
-
+from django.shortcuts import get_object_or_404
+import cgi
+from django.views import View
+from app.models import User
 
 
 #-------------------------------------------
@@ -13,9 +16,6 @@ def loginhw(request):
 
     return render(request, 'app/loginhw.html')
 
-def restorepass(request):
-
-    return render(request, 'app/restorepass.html')
 
 def autenticar(request):
     if request.method == 'POST':
@@ -106,6 +106,7 @@ def ADMIN(request):
         u.is_superuser = superu
         u.set_password(password)  # Use set_password to securely store the password
         u.username = usern
+        u.id= usern
         u.save()
 
         return redirect('app:ADMIN')
@@ -139,6 +140,52 @@ def crear_tarea(request):
     except Exception as e:
         print(e)
         return render(request,'app/dashboardhw.html')
+    
+
+
+class RestorePassView(View):
+    def get(self, request):
+        return render(request, 'app/restorepass.html')
+    
+    def post(self, request):
+        userr = request.POST.get('userr', '')
+        owner = User.objects.get(id=userr)
+        print(owner)
+        print(userr) 
+
+        
+        return redirect('app:restorepass')
+    
+def edit_task(request, task_id):
+    task = Tarea.objects.filter(id=task_id)
+
+    context ={
+        'task':task,
+     }
+
+
+    return render(request, 'app/edit_task.html', context)
+
+
+def edit_task2(request, task_id):
+    ntitulo = request.POST['ntitulo']
+    task = Tarea.objects.get(id=task_id)
+    task.titulo=ntitulo
+    task.save()
+
+    #     clientes=Cliente.objects.all()
+    # owners=User.objects.all()
+
+    # contexto ={
+    # 'tareas': [],
+    # 'c':clientes,
+    # 'u':owners,
+    # }
+
+    
+    return render(request, 'app/dashboardhws.html')
+
+    
 
 def onebox(request):
 
