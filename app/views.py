@@ -158,11 +158,19 @@ class RestorePassView(View):
     
 def edit_task(request, task_id):
     task = Tarea.objects.filter(id=task_id)
+    u = User.objects.all()
+    cl = Cliente.objects.all()
 
     context ={
-        'task':task,
+        'task':[],
+        'u': u,
+        'cl': cl,
      }
 
+    for task in task:
+        cliente = Cliente.objects.get(id=task.contacto_cliente_id)
+        task.cliente = cliente.nombre+'-'+cliente.contacto  # Agregar el atributo "cliente" a la task.       }
+        context['task'].append(task)
 
     return render(request, 'app/edit_task.html', context)
 
@@ -172,18 +180,40 @@ def edit_task2(request, task_id):
     task = Tarea.objects.get(id=task_id)
     task.titulo=ntitulo
     task.save()
-
-    #     clientes=Cliente.objects.all()
-    # owners=User.objects.all()
-
-    # contexto ={
-    # 'tareas': [],
-    # 'c':clientes,
-    # 'u':owners,
-    # }
-
-    
     return render(request, 'app/dashboardhws.html')
+
+def edit_task3(request, task_id):
+    ndes = request.POST['ndes']
+    task = Tarea.objects.get(id=task_id)
+    task.descripcion=ndes
+    task.save()
+    return render(request, 'app/dashboardhws.html')
+
+def edit_task4(request, task_id):
+    ndate = request.POST['ndate']
+    task = Tarea.objects.get(id=task_id)
+    task.fecha_vencimiento=ndate
+    task.save()
+    return render(request, 'app/dashboardhws.html')
+
+def edit_task5(request, task_id):
+    cl = request.POST['cliente']
+    t = Tarea.objects.get(id=task_id)
+    cliente= Cliente.objects.get(id=cl)
+    t.contacto_cliente = cliente
+    t.save()
+    return render(request, 'app/dashboardhws.html')
+
+
+def edit_task6(request, task_id):
+    ow = request.POST['cliente']
+    task = Tarea.objects.get(id=task_id)
+    owner= User.objects.get(id=ow)
+    task.owner = owner
+    task.save()
+    return render(request, 'app/dashboardhws.html')
+
+
 
     
 

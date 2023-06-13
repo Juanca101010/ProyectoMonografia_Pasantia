@@ -21,4 +21,8 @@ urlpatterns = [
     path('ejecutartarea/', views.ejecutartarea, name='ejecutartarea'),
     path('edit_task/<int:task_id>/', views.edit_task, name='edit_task'),
     path('edit_task2/<int:task_id>/', views.edit_task2, name='edit_task2'),
+    path('edit_task3/<int:task_id>/', views.edit_task3, name='edit_task3'),
+    path('edit_task4/<int:task_id>/', views.edit_task4, name='edit_task4'),
+    path('edit_task5/<int:task_id>/', views.edit_task5, name='edit_task5'),
+    path('edit_task6/<int:task_id>/', views.edit_task6, name='edit_task6'),
 ]

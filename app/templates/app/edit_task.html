@@ -55,10 +55,10 @@
                         <h3>{{task.descripcion}}</h3>
                     </td>
                     <td>
-                        <form action="{% url 'app:edit_task2' task.id %}" method="post">
+                        <form action="{% url 'app:edit_task3' task.id %}" method="post">
                             {% csrf_token %}
                             <label for="">New Description</label>
-                            <input name="ntitulo" value="ntitulo" type="text">
+                            <input name="ndes" value="ndes" type="text">
                             <button type="submit" class="submit-btn"> Update</button>
                         </form>
                     </td>
@@ -70,10 +70,10 @@
                         <h3>{{task.fecha_vencimiento}}</h3>
                     </td>
                     <td>
-                        <form action="{% url 'app:edit_task2' task.id %}" method="post">
+                        <form action="{% url 'app:edit_task4' task.id %}" method="post">
                             {% csrf_token %}
                             <label for="">New end date</label>
-                            <input name="ntitulo" value="ntitulo" type="date">
+                            <input name="ndate" value="ndate" type="date">
                             <button type="submit" class="submit-btn"> Update</button>
                         </form>
                     </td>
@@ -82,17 +82,17 @@
                 <tr>
                     {%for task in task%}
                     <td class="title">
-                        <h3>{{task.contacto_cliente}}</h3>
+                        <h3>{{task.cliente}}</h3>
                     </td>
                     <td>
-                        <form action="{% url 'app:edit_task2' task.id %}" method="post">
+                        <form action="{% url 'app:edit_task5' task.id %}" method="post">
                             {% csrf_token %}
                             <label for="">New customer</label>
-                            <!-- <select name="cliente">
-                                {%for clientes in c%}
-                                <option value={{clientes.id}}>{{clientes.nombre}} {{clientes.contacto}}</option>
+                            <select name="cliente">
+                                {%for cl in cl%}
+                                <option value={{cl.id}} >{{cl.nombre}}{{cl.contacto}}</option>
                                 {% endfor %}
-                            </select> -->
+                            </select>
                             <button type="submit" class="submit-btn"> Update</button>
                         </form>
                     </td>
@@ -101,17 +101,17 @@
                 <tr>
                     {%for task in task%}
                     <td class="title">
-                        <h3>{{task.owner_id}}</h3>
+                        <h3>{{task.owner}}</h3>
                     </td>
                     <td>
-                        <form action="{% url 'app:edit_task2' task.id %}" method="post">
+                        <form action="{% url 'app:edit_task6' task.id %}" method="post">
                             {% csrf_token %}
                             <label for="">New Owner</label>
-                            <!-- <select name="owner">
-                                {%for owners in u%}
-                                <option value={{owners.id}}>{{owners.username}} {{owners.email}}</option>
+                            <select name="cliente">
+                                {%for u in u%}
+                                <option value={{u.id}} >{{u.first_name}}{{u.last_name}}</option>
                                 {% endfor %}
-                            </select> -->
+                            </select>
                             <button type="submit" class="submit-btn"> Update</button>
                         </form>
                     </td>
