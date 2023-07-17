@@ -9,6 +9,7 @@ from django.shortcuts import get_object_or_404
 import cgi
 from django.views import View
 from app.models import User
+from django.contrib import messages
 
 
 #-------------------------------------------
@@ -22,14 +23,16 @@ def autenticar(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        print(user)
         if user is not None:
             if user.is_superuser:
-                return redirect('app:dashboardhws')  # Redirige a la página de inicio de sesión para superusuarios
+                return redirect('app:dashboardhws')
             else:
-                return redirect('app:dashboardhw')  # Redirige a la página de inicio de sesión para usuarios no superadministradores
+                return redirect('app:dashboardhw')
+        else:
+            messages.error(request, 'Usuario o contraseña incorrectos.')
+            return redirect('app:loginhw')  # Redirige a la página de inicio de sesión con un mensaje de error
     else:
-        return HttpResponse(request, "hello")
+        return redirect('app:loginhw')
 
 
 def view_logout(request):
