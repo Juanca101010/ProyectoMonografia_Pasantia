@@ -15,11 +15,12 @@
 
 <body>
 
-  <div id="contenedor" class="contenedor">
+  <div id="contenedor" class="contenedor">  
     <div id="header" class="header">
       <h2>CS Platform</h2>
       <nav id="menu" class="menu">
         <a href="{% url 'app:ADMIN' %}">ADMIN</a>
+        <a href="{% url 'app:loginhw' %}">Log Out</a>
       </nav>
     </div>
 
@@ -27,11 +28,11 @@
           <h2>Create USER</h2>
             <form action="{% url 'app:ADMIN' %}" method="post">
               {% csrf_token %}
-              <div class="field" >
+              <div class="field" >  
                 <label>
-                  <i class="far fa-user"></i>ID USUARIO
+                  <i class="far fa-user"></i>USER
                 </label>
-                <input type="number" name="usern"  required>
+                <input type="text" name="usern"  required>
               </div>
               <div class="field" >
                 <label >

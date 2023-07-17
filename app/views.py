@@ -29,7 +29,7 @@ def autenticar(request):
             else:
                 return redirect('app:dashboardhw')  # Redirige a la página de inicio de sesión para usuarios no superadministradores
     else:
-        return render(request, "app/loginhw.html")
+        return HttpResponse(request, "hello")
 
 
 def view_logout(request):
@@ -106,7 +106,6 @@ def ADMIN(request):
         u.is_superuser = superu
         u.set_password(password)  # Use set_password to securely store the password
         u.username = usern
-        u.id= usern
         u.save()
 
         return redirect('app:ADMIN')
