@@ -95,58 +95,6 @@
         <h2>RFC</h2>
         <h1>........</h1>
       </div>
-
-      <div class="tab">
-        <h2>Nex Task</h2>
-        <button id="create">Create Task</button>
-        <div class="createtask">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Create Task</h2>
-            <form action="{% url 'app:crear_tarea' %}" method="post">
-              {% csrf_token %}
-              <div class="field" tabindex="1">
-                <label for="titulo">
-                  <i class="far fa-user"></i>Titulo
-                </label>
-                <input name="titulo" type="text" placeholder="TItulo de tarea" required>
-              </div>
-              <div class="field" tabindex="2">
-                <label for="descripcion">
-                  <i class="far fa-envelope"></i>Descripción
-                </label>
-                <input name="descripcion" type="text" placeholder="Descripción de tarea" required>
-              </div>
-              <div class="field" tabindex="3">
-                <label for="fecha_vencimiento">
-                  <i class="far fa-edit"></i>Fecha de vencimiento
-                </label>
-                <input type="date" name="fecha_vencimiento" placeholder="type here" required></input>
-              </div>
-              <div class="field" tabindex="2">
-                <label for="cliente">
-                  <i class="far fa-envelope"></i>Cliente
-                </label>
-                <select name="cliente">
-                  {%for clientes in c%}
-                  <option value={{clientes.id}}>{{clientes.nombre}} {{clientes.contacto}}</option>
-                  {% endfor %}
-                </select>
-              </div>
-              <div class="field" tabindex="2">
-                <label for="owner">
-                  <i class="far fa-envelope"></i>Owner
-                </label>
-                <select name="owner">
-                  {%for owners in u%}
-                  <option value={{owners.id}}>{{owners.username}} {{owners.email}}</option>
-                  {% endfor %}
-                </select>
-              </div>
-              <button type="submit" class="submit-btn"> CREATE</button>
-            </form>
-          </div>
-        </div>
       </div>
 
       <a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank"

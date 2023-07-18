@@ -68,10 +68,6 @@ def smsEmail(request):
 
     return render(request, 'app/smsEmail.html')
 
-
-def help(request):
-
-    return render(request, 'app/help.html')
 def icareplus(request):
 
     return render(request, 'app/icareplus.html')
@@ -91,6 +87,23 @@ def netcare(request):
         contexto['tareas'].append(tarea)
 
     return render(request, 'app/netcare.html',contexto)
+
+def netcare2(request):
+    clientes=Cliente.objects.all()
+    owners=User.objects.all()
+    tareas = Tarea.objects.all()
+    contexto ={
+    'tareas': [],
+    'c':clientes,
+    'u':owners,
+    }
+
+    for tarea in tareas:
+        cliente = Cliente.objects.get(id=tarea.contacto_cliente_id)
+        tarea.cliente = cliente.nombre+'-'+cliente.contacto  # Agregar el atributo "cliente" a la tarea
+        contexto['tareas'].append(tarea)
+
+    return render(request, 'app/netcare2.html',contexto)
 
 
 def ADMIN(request):
@@ -222,9 +235,7 @@ def edit_task6(request, task_id):
 def onebox(request):
 
     return render(request, 'app/onebox.html')
-def profile(request):
 
-    return render(request, 'app/profile.html')
 def vpnaccess(request):
 
     return render(request, 'app/vpnaccess.html')

@@ -23,42 +23,36 @@
               <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
               <a href="{% url 'app:onebox' %}">One Box</a>
               <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
-              <a href="{% url 'app:help' %}">Help</a>
-              <a href="{% url 'app:profile' %}">Profile</a>
               <a href="{% url 'app:loginhw' %}">Log Out</a>
             </nav>
         </div>
 
         <div class="barra">
-            <a href="#">Inicio</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Productos</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
+          <div class="email-messages">
+            <h2>Mensajes</h2>
+            <div class="email-toolbar">
+              <button class="email-btn email-btn-search">Buscar</button>
+              <button class="email-btn email-btn-new">Nuevo correo</button>
+              <button class="email-btn email-btn-share">Compartir</button>
+            </div>
+            <ul class="email-message-list">
+              <li class="email-message-item">
+                <div class="email-message-item-content">
+                  <div class="email-message-item-title">Título del mensaje</div>
+                  <div class="email-message-item-preview">Este es el contenido previo del mensaje...</div>
+                </div>
+                <div class="email-message-item-meta">
+                  <div class="email-message-item-sender">Nombre del remitente</div>
+                  <div class="email-message-item-date">Fecha del mensaje</div>
+                </div>
+              </li>
+              <!-- Más mensajes aquí -->
+            </ul>
+          </div>
         </div>
         <div class="contenido">
             <div class="email-container">
-                <div class="email-messages">
-                  <h2>Mensajes</h2>
-                  <div class="email-toolbar">
-                    <button class="email-btn email-btn-search">Buscar</button>
-                    <button class="email-btn email-btn-new">Nuevo correo</button>
-                    <button class="email-btn email-btn-share">Compartir</button>
-                  </div>
-                  <ul class="email-message-list">
-                    <li class="email-message-item">
-                      <div class="email-message-item-content">
-                        <div class="email-message-item-title">Título del mensaje</div>
-                        <div class="email-message-item-preview">Este es el contenido previo del mensaje...</div>
-                      </div>
-                      <div class="email-message-item-meta">
-                        <div class="email-message-item-sender">Nombre del remitente</div>
-                        <div class="email-message-item-date">Fecha del mensaje</div>
-                      </div>
-                    </li>
-                    <!-- Más mensajes aquí -->
-                  </ul>
-                </div>
+
                 <div class="email-contacts">
                   <h2>Contactos</h2>
                   <div class="email-toolbar">

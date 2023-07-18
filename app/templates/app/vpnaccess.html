@@ -16,31 +16,31 @@
 <body>
     
     <div id="contenedor" class="contenedor">
-        <div id="header" class="header">
-            <h2>CS Platform</h2>
-            <nav id="menu" class="menu">
-              <a href="{% url 'app:dashboardhws' %}">HOME</a>
-              <a href="{% url 'app:netcare' %}">Netcare</a>
-              <a href="{% url 'app:icareplus' %}">Icare+</a>
-              <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
-              <a href="{% url 'app:onebox' %}">One Box</a>
-              <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
-              <a href="{% url 'app:help' %}">Help</a>
-              <a href="{% url 'app:profile' %}">Profile</a>
-              <a href="{% url 'app:loginhw' %}">Log Out</a>
-            </nav>
-          </div>
-          
-        <div class="barra">
-                <a href="#">Clientes</a>
-                <a href="#">Cuentas</a>
-                <a href="#">Productos</a>
-                <a href="#">EXE</a>
-                <a href="#">Contacto</a>
-                <a href="#">Ip Addres</a>
-                <a href="#">Get Access</a>
+      <div id="header" class="header">
+        <h2>CS Platform</h2>
+        <nav id="menu" class="menu">
+          <a href="{% url 'app:dashboardhws' %}">HOME</a>
+          <a href="{% url 'app:netcare' %}">Netcare</a>
+          <a href="{% url 'app:icareplus' %}">Icare+</a>
+          <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
+          <a href="{% url 'app:onebox' %}">One Box</a>
+          <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
+          <a href="{% url 'app:loginhw' %}">Log Out</a>
+        </nav>
+      </div>
+      <div class="contenido">
+  
+  
+        <div class="tab-buttons">
+          <button class="tab-button">Clientes</button>
+          <button class="tab-button">Productos</button>
+          <button class="tab-button">Listado Herramientas</button>
+          <button class="tab-button">List IP Addres</button>
+
         </div>
-        <div class="contenido">
+  
+        <div class="tab active">
+          <h2>Clientes</h2>
           <table>
             <tr>
               <th>Documento</th>
@@ -79,11 +79,32 @@
               <td><a href="#">Detalles</a></td>
             </tr>
           </table>
-              
         </div>
-            
-        <div class="footer"></div>
+  
+        <div class="tab">
+          <h2>Productos</h2>
+          <h1>........</h1>
+        </div>
+  
+        <div class="tab">
+          <h2>Listado Herramientas</h2>
+          <h1>........</h1>
+        </div>
+  
+        <div class="tab">
+          <h2>List IP Addres</h2>
+          <h1>........</h1>
+   
+        </div>
+  
+        <a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank"
+          style="color:#000"></a>
+  
+      </div>
+  
+      <div class="footer"></div>
     </div>
+    <script src="{% static 'app/js/pestanatask.js' %}"></script>
 </body>
 
 </html>

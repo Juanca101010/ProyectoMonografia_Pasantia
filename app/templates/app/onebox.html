@@ -23,14 +23,12 @@
         <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
         <a href="{% url 'app:onebox' %}">One Box</a>
         <a href="{% url 'app:vpnaccess' %}">VPN Access</a>
-        <a href="{% url 'app:help' %}">Help</a>
-        <a href="{% url 'app:profile' %}">Profile</a>
         <a href="{% url 'app:loginhw' %}">Log Out</a>
       </nav>
     </div>
 
     <div class="barra">
-      <a href="#">Datas Sheet</a>
+      <a href="#">Documentación</a>
       <a href="#">Licencias</a>
       <a href="#">Equipos</a>
       <a href="#">Herramientas</a>
@@ -38,16 +36,15 @@
     </div>
     <div class="contenido">
       <div class="email-container">
-        <div class="email-messages">
           <h2>DOCS</h2>
           <div class="email-toolbar">
             <form class="search">
-
+              <br>
+              <tr></tr>
               <p>Search <input id="searchTerm" type="text" onkeyup="doSearch()" /></p>
-       
+              <br><tr></tr>
            </form>
-            <button class="email-btn email-btn-new">Nuevo correo</button>
-            <button class="email-btn email-btn-share">Compartir</button>
+           <br><tr></tr>
           </div>
           <table id="datos">
             <tr>
@@ -55,9 +52,7 @@
               <th>ID</th>
               <th>Owner</th>
               <th>Descargar</th>
-              <th>Editar</th>
               <th>Comentar</th>
-              <th>Buscar</th>
               <th>Descripción</th>
               <th>Detalles</th>
             </tr>
@@ -66,9 +61,7 @@
               <td>12345</td>
               <td>Juan Pérez</td>
               <td><a href="#">Descargar</a></td>
-              <td><a href="#">Editar</a></td>
               <td><a href="#">Comentar</a></td>
-              <td><a href="#">Buscar</a></td>
               <td>Descripción del documento 1</td>
               <td><a href="#">Detalles</a></td>
             </tr>
@@ -77,9 +70,25 @@
               <td>67890</td>
               <td>María López</td>
               <td><a href="#">Descargar</a></td>
-              <td><a href="#">Editar</a></td>
               <td><a href="#">Comentar</a></td>
-              <td><a href="#">Buscar</a></td>
+              <td>Descripción del documento 2</td>
+              <td><a href="#">Detalles</a></td>
+            </tr>
+            <tr>
+              <td>Documento 2</td>
+              <td>67890</td>
+              <td>María López</td>
+              <td><a href="#">Descargar</a></td>
+              <td><a href="#">Comentar</a></td>
+              <td>Descripción del documento 2</td>
+              <td><a href="#">Detalles</a></td>
+            </tr>
+            <tr>
+              <td>Documento 2</td>
+              <td>67890</td>
+              <td>María López</td>
+              <td><a href="#">Descargar</a></td>
+              <td><a href="#">Comentar</a></td>
               <td>Descripción del documento 2</td>
               <td><a href="#">Detalles</a></td>
             </tr>
@@ -89,17 +98,7 @@
 
           </tr>
           </table>
-        </div>
-        <div class="email-contacts">
-          <h2>Contactos</h2>
-          <div class="email-toolbar">
-            <div class="email-toolbar">
-            <button class="email-btn email-btn-new">Nuevo chat</button>
-            <button class="email-btn email-btn-share">Compartir</button>
-          </div>
-        </div>
-      </div>
-
+              
 
       <script src="{% static 'app/js/emailsms.js' %}"></script> <!-- Archivo JavaScript que cambia los colores -->
 

@@ -6,7 +6,7 @@
     grid-template: 110px 1fr 70px / 1fr 4fr;
     grid-template-areas:
       "header header"
-      "barra contenido"
+      "contenido"
       "footer footer";
   }
   
@@ -73,7 +73,7 @@
   .contenido {
     background: #fff;
     grid-area: contenido;
-    padding: 10px;
+    padding: 40px;
   }
   
   .footer {
