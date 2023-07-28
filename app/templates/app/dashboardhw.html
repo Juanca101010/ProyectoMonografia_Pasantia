@@ -19,7 +19,7 @@
       <h2>CS Platform</h2>
       <nav id="menu" class="menu">
         <a href="{% url 'app:dashboardhw' %}">HOME</a>
-        <a href="{% url 'app:netcare' %}">Netcare</a>
+        <a href="{% url 'app:netcare2' %}">Netcare</a>
         <a href="{% url 'app:icareplus' %}">Icare+</a>
         <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
         <a href="{% url 'app:onebox' %}">One Box</a>
@@ -37,7 +37,6 @@
                   <th>ID TASK</th>
                   <th>SHARE</th>
                   <th>OWNER</th>
-                  <th>PROGRESS</th>
                   <th>DUE DATE</th>
                   <th>CUSTOMER</th>
                 </tr>
@@ -46,7 +45,6 @@
                   <td class="title"><h3>{{tarea.titulo}}</h3></td>
                   <td class="compare-btn"><button class="compare-btn">Share</button></td>
                   <td class="owner"><p>Owner: <span class="owner">{{tarea.owner}}</span></p></td>
-                  <td class="progress"><p>Progreso: <span class="progress">{{tarea.progreso}}</span></p></td>
                   <td class="due-date"><p>Fecha de vencimiento: <span class="due-date">{{tarea.fecha_vencimiento}}</span></p></td>
                   <td class="contact-info"><p>Contacto: <span class="contact-info">{{tarea.cliente}}</span></p></td>
                 </tr>

@@ -9,7 +9,7 @@ class Cliente(models.Model):
     contacto = models.CharField(max_length=100)
     productos = models.CharField(max_length=100)
     descripcion = models.TextField()
-    Email = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
 
 # class Soporte(models.Model):
 #     nombre = models.CharField(max_length=100)

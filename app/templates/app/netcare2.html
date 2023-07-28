@@ -19,7 +19,7 @@
     <div id="header" class="header">
       <h2>CS Platform</h2>
       <nav id="menu" class="menu">
-        <a href="{% url 'app:dashboardhws' %}">HOME</a>
+        <a href="{% url 'app:dashboardhw' %}">HOME</a>
         <a href="{% url 'app:netcare' %}">Netcare</a>
         <a href="{% url 'app:icareplus' %}">Icare+</a>
         <a href="{% url 'app:smsEmail' %}">SMS/Email</a>
@@ -37,7 +37,6 @@
         <button class="tab-button">Risk</button>
         <button class="tab-button">Healthcheck</button>
         <button class="tab-button">RFC</button>
-        <button class="tab-button">New Task</button>
       </div>
 
       <div class="tab active">
@@ -46,9 +45,8 @@
           <tr>
             <th>ID TASK</th>
             <th>EXECUTE</th>
-            <th>SHARE</th>
             <th>OWNER</th>
-            <th>PROGRESS</th>
+            <th>DESCRIPTION</th>
             <th>DUE DATE</th>
             <th>CUSTOMER</th>
           </tr>
@@ -58,12 +56,11 @@
               <h3>{{tarea.titulo}}</h3>
             </td>
             <td class="edit-btn"><a href="{% url 'app:ejecutartarea' %}" class="edit-btn">EXECUTE</a></td>
-            <td class="compare-btn"><button class="compare-btn">Share</button></td>
             <td class="owner">
               <p>Owner: <span class="owner">{{tarea.owner}}</span></p>
             </td>
             <td class="progress">
-              <p>Progreso: <span class="progress">{{tarea.progreso}}</span></p>
+              <p>Descripción: <span class="progress">{{tarea.descripcion}}</span></p>
             </td>
             <td class="due-date">
               <p>Fecha de vencimiento: <span class="due-date">{{tarea.fecha_vencimiento}}</span></p>
@@ -104,7 +101,6 @@
 
     <div class="footer"></div>
   </div>
-  <script src="{% static 'app/js/newtask.js' %}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="{% static 'app/js/pestanatask.js' %}"></script>
 </body>

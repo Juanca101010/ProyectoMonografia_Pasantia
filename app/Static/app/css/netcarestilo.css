@@ -3,10 +3,10 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template: 110px 1fr 70px / 1fr 4fr;
+  grid-template: 110px 1fr 70px / 1fr;
   grid-template-areas:
     "header header"
-    "barra contenido"
+    "contenido contenido"
     "footer footer";
 }
 
@@ -45,30 +45,6 @@
   color: navy;
 }
 
-.barra {
-  padding-top: 20px;
-  background-color: rgba(0, 0, 128, 0.473);
-  grid-area: barra;
-  height: 100%;
-  background-image: url('/static/app/image/earthbbb.jpg');
-  background-size: cover;
-  background-size: auto;
-}
-
-.barra a {
-  display: block;
-  background-color: navy;
-  color: white;
-  padding: 20px;
-  text-decoration: none;
-  border-radius: 20px;
-  margin: 10px;
-}
-
-.barra a:hover {
-  background-color: #fff;
-  color: navy;
-}
 
 .contenido {
   background: #fff;
