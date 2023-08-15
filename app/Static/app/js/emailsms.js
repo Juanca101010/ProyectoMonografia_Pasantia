@@ -17,16 +17,16 @@ const messages = [
   
   // Obtener los contactos de una base de datos o API
   const contacts = [
-    {
-      id: 1,
-      name: "Usuario 1",
-      email: "user1@example.com"
-    },
-    {
-      id: 2,
-      name: "Usuario 2",
-      email: "user2@example.com"
-    },
+    // {
+    //   id: 1,
+    //   name: "Usuario 1",
+    //   email: "user1@example.com"
+    // },
+    // {
+    //   id: 2,
+    //   name: "Usuario 2",
+    //   email: "user2@example.com"
+    // },
     // ...
   ];
   
