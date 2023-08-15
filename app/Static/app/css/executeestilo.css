@@ -1,0 +1,245 @@
+.contenedor {
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 110px 1fr 70px / 1fr;
+    grid-template-areas:
+      "header header"
+      "contenido contenido"
+      "footer footer";
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 128, 0.473);
+    grid-area: header;
+    flex-direction: column;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto 200%;
+    color: white;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: navy;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menu a:hover {
+    background-color: #fff;
+    color: navy;
+  }
+  
+  
+  .contenido {
+    background: #fff;
+    grid-area: contenido;
+    padding: 10px;
+  }
+  
+  .footer {
+    background-color: rgba(0, 0, 128, 0.473);
+    grid-area: footer;
+    background-image: url('/static/app/image/earthbbb.jpg');
+    background-size: cover;
+    background-size: auto;
+  }
+  
+  /* Estilos generales */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  .container {
+    display: flex;
+    padding: 0 16px;
+    flex-wrap: wrap;
+  }
+  
+  form {
+    display: inline;
+    padding: 0;
+    flex-wrap: wrap;
+    display: block;
+  }
+  
+  
+  
+  label,
+  input,
+  textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  label i {
+    margin: 0 10px 0 0;
+  }
+  
+  .field:focus-within label {
+    color: #000;
+    letter-spacing: 2px;
+  }
+  
+  input,
+  textarea {
+    background: white;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.5s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    background: white;
+    box-shadow: #000;
+  }
+  
+  button:hover {
+    letter-spacing: 2px;
+    box-shadow: none;
+  }
+  
+   
+    /* Estilos generales */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+  }
+  
+  /* Estilos para los formularios */
+  .form-group {
+      margin-bottom: 20px;
+  }
+  
+  label {
+      display: block;
+      font-weight: bold;
+  }
+  
+  input[type="text"],
+  textarea,
+  select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+  }
+  
+  /* Estilos para la tabla */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  
+  th {
+    background-color: navy;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ccc;
+    color: white;
+  }
+  
+  
+  /* Estilos para los títulos */
+  h2 {
+      color: #ffffff;
+      margin-top: 30px;
+  }
+  
+  /* Estilos para la animación */
+  .animated {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+      0% {
+          opacity: 0;
+      }
+  
+      100% {
+          opacity: 1;
+      }
+  }
+  
+  /* Estilos para los botones */
+  .button-container {
+      text-align: center;
+  }
+  
+  button {
+      padding: 10px 20px;
+      background-color: #337ab7;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+      background-color: #23527c;
+  }
+  
+  /* Estilos para las pestañas */
+  .tab {
+      display: none;
+  }
+  
+  .tab.active {
+      display: block;
+  }
+  
+  .tab-buttons {
+      margin-bottom: 20px;
+  }
+  
+  .tab-buttons button {
+      margin-right: 10px;
+  }

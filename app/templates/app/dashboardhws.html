@@ -95,7 +95,10 @@
               <p>Contact: <span class="contact-info">{{tarea.cliente}}</span></p>
             </td>
             <td class=" change">
-              <button value="{{tarea.id}}" class="compare-btn">Deltete</button>
+              <form action="{% url 'app:eliminar_tarea' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" value="{{tarea.id}}" name="tarea_id" class="submit-btn">DELETE</button>
+              </form>
             </td>
           </tr>
           {% endfor %}

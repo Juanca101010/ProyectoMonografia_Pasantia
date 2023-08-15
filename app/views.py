@@ -10,6 +10,8 @@ import cgi
 from django.views import View
 from app.models import User
 from django.contrib import messages
+from django.http import JsonResponse
+
 
 
 #-------------------------------------------
@@ -157,6 +159,16 @@ def crear_tarea(request):
         return render(request,'app/dashboardhw.html')
     
 
+def eliminar_tarea(request):
+    try:
+        tarea_id = request.POST['tarea_id']
+        tarea = Tarea.objects.get(pk=tarea_id)
+        tarea.delete()
+        return redirect('app:dashboardhws')
+    except Tarea.DoesNotExist:
+        return JsonResponse({'eliminado': False})
+    
+
 
 class RestorePassView(View):
     def get(self, request):
@@ -241,6 +253,6 @@ def vpnaccess(request):
     return render(request, 'app/vpnaccess.html')
 
 
-def ejecutartarea(request):
+def execute(request):
 
-    return render(request, 'app/ejecutartarea.html')
+    return render(request, 'app/execute.html')

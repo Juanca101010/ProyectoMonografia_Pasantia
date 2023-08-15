@@ -3,28 +3,26 @@
 <html>
 
 <head>
-    <title>{% block titulo %}NETCARE TASK{% endblock %}</title>
-    <link href="{% static 'app/css/ejecutartareaestilo.css' %}" rel="stylesheet">
+    <title>{% block title %}NETCARE TASK{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'app/css/executeestilo.css' %}">
 </head>
 
 <body>
-    <div id="contenedor" class="contenedor">
-        <div id="header" class="header">
+    <div class="contenedor">
+        <div class="header">
             <h2>CS Platform</h2>
-            <nav id="menu" class="menu">
+            <nav class="menu">
                 <a href="{% url 'app:netcare' %}">BACK</a>
             </nav>
         </div>
         <div class="contenido">
             <div class="tab-buttons">
                 <button class="tab-button">Implementación</button>
-                <button class="tab-button">Documentación del Proceso</button>
-                <button class="tab-button">Notas</button>
-                <button class="tab-button">Análisis de la Información</button>
             </div>
 
-            <div class="tab active">
-                <h2>Implementación</h2>
+            <div>
+                <h3>Realiaza una Documentación del Proceso y agrega notas</h3>
+                <br>
                 <table id="device-info">
                     <thead>
                         <tr>
@@ -35,38 +33,35 @@
                     <tbody>
                         <tr>
                             <td>Dispositivo 1</td>
-                            <td>Afección 1</td>
+                            <td><input type="text"></td>
                         </tr>
                         <tr>
                             <td>Dispositivo 2</td>
-                            <td>Afección 2</td>
+                            <td><input type="text"></td>
                         </tr>
                         <tr>
                             <td>Dispositivo 3</td>
-                            <td>Afección 3</td>
+                            <td><input type="text"></td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
-
-            <div class="tab">
-                <h2>Documentación del Proceso</h2>
+                <br>
+                <h3>Notas</h3>
+                <br>
                 <textarea id="process-documentation"></textarea>
-            </div>
-
-            <div class="tab">
-                <h2>Notas</h2>
-                <textarea id="task-notes"></textarea>
-            </div>
-
-            <div class="tab">
-                <h2>Análisis de la Información</h2>
-                <textarea id="information-analysis"></textarea>
+                <h3>Upload a File</h3>
+                <br>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="file">Select a file:</label>
+                    <input type="file" name="file" id="file">
+                    <br>    
+                    <input type="submit" value="Upload">
+                </form>
             </div>
 
             <div class="button-container">
-                <button id="save-button">Guardar</button>
-                <button id="reset-button">Reiniciar</button>
+                <button id="save-button">Download</button>
+                <button id="save-button">Share</button>
             </div>
         </div>
 
